@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-image: url('images/bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5%);
+    
+}
+
+nav >img{
+    width: 10rem;
+}
+.containerImageTerrain{
+    display: flex;
+    height: 80vh ;
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+.terrainImage{
+    background-image: url('images/terrain.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+
+}
+
+.iconAjout{
+    width: 4rem;
+}
+.bteAjout{
+    background-color: transparent;
+    border: none;
+    height: 1rem;
+    padding: 0;
+}
+.ST{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+.Rw-Lw{
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-bottom: 90px;
+}
+.gool{
+   display: flex;
+   justify-content: center;
+   margin-top: 120px;
+}
+.cdm{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.defance{
+    display: flex ;
+    justify-content: center;
+    gap: 8vw;
+    height: 5rem;
+    margin-top: 120px;
+    
+}
+.center{
+ display: flex;
+ justify-content: center;
+ gap: 8vw;
+ height: 20rem;
+ 
+
+}
+
+
+footer{
+    height: 50vh;
+}
