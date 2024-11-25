@@ -3,46 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-    <header>
-        <nav>
-            <img src="images/logo.png" alt="logo" srcset="">
-        </nav>
-    </header>
-     <div class="containerImageTerrain">
-    <div class="terrainImage">
-        
-    <div class="ST">
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
+<body class="bg-gray-900">
+    <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('images/bg.jpeg');">
+        <header>
+            <nav>
+                <img src="images/logo.png" alt="logo" class="w-40">
+            </nav>
+        </header>
+        <div class="flex h-[80vh] pl-12">
+            <div class="bg-cover bg-center bg-no-repeat w-1/2" style="background-image: url('images/terrain.jpeg');">
+                <div class="flex flex-col">
+                    <div class="flex justify-center gap-12">
+                            <img src="images/badge_gold.png" alt="" class="w-16">
+                            <img src="images/badge_gold.png" alt="" class="w-16">
+                    </div>
+                    <div class=" pb-12 flex flex-col">
+                    <div class="flex justify-center gap-[8vw]">
+                        <img src="images/badge_gold.png" alt="" class="w-16">
+                        <img src="images/badge_gold.png" alt="" class="w-16">
+                        <img src="images/badge_gold.png" alt="" class="w-16">
+                        <img src="images/badge_gold.png" alt="" class="w-16">
+                </div>
+                  
+                    <div class="flex justify-center gap-[8vw] mt-[100px] ">
+                            <img src="images/badge_gold.png" alt="" class="w-16">
+                            <img src="images/badge_gold.png" alt="" class="w-16">
+                            <img src="images/badge_gold.png" alt="" class="w-16">
+                            <img src="images/badge_gold.png" alt="" class="w-16">
+                    </div>
+                </div>
+                    <div class="flex justify-center ">
+                            <img src="images/badge_gold.png" alt="" class="w-16">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="h-[50vh]"></footer>
     </div>
-    <div class="Rw-Lw">
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-    </div>
-    <div class="center">
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-    </div>
-    <div class="cdm" >
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-    </div>
-    <div class="defance">
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-    </div>
-    <div class="gool" >
-        <button class="bteAjout"><img class="iconAjout" src="images/badge_gold.png" alt="" srcset=""></button>
-    </div>
- <!-- <svg class="tactic-heat-map" width="892" height="725" viewBox="0 0 902 647"><path d="M101.151 100.583L119.624 0.402344H252.189L241.136 100.583H101.151Z" class="heat-map-tile-level-never"></path><path d="M241.099 100.583L252.197 0.402344H384.763L381.091 100.583H241.099Z" class="heat-map-tile-level-never"></path><path d="M381.046 100.583L384.763 0.402344H517.337L521.039 100.583H381.046Z" class="heat-map-tile-level-never"></path><path d="M521.001 100.583L517.337 0.402344H649.91L660.986 100.583H521.001Z" class="heat-map-tile-level-never"></path><path d="M660.947 100.583L649.909 0.402344H782.475L800.932 100.583H660.947Z" class="heat-map-tile-level-never"></path><path d="M80.4404 212.89L101.114 100.776H241.114L228.744 212.89H80.4404Z" class="heat-map-tile-level-never"></path><path d="M228.659 212.89L241.076 100.776H381.083L376.97 212.89H228.659Z" class="heat-map-tile-level-never"></path><path d="M376.879 212.89L381.038 100.776H521.046L525.19 212.89H376.879Z" class="heat-map-tile-level-never"></path><path d="M525.098 212.89L521.008 100.776H661.008L673.409 212.89H525.098Z" class="heat-map-tile-level-never"></path><path d="M673.325 212.89L660.97 100.776H800.97L821.628 212.89H673.325Z" class="heat-map-tile-level-never"></path><path d="M57.1309 339.297L80.4173 213.011H228.728L214.796 339.297H57.1309Z" class="heat-map-tile-level-never"></path><path d="M214.659 339.297L228.645 213.011H376.963L372.332 339.297H214.659Z" class="heat-map-tile-level-never"></path><path d="M372.187 339.297L376.871 213.011H525.197L529.859 339.297H372.187Z" class="heat-map-tile-level-never"></path><path d="M529.723 339.297L525.106 213.011H673.425L687.395 339.297H529.723Z" class="heat-map-tile-level-never"></path><path d="M687.25 339.297L673.341 213.011H821.652L844.915 339.297H687.25Z" class="heat-map-tile-level-never"></path><path d="M30.6982 482.651L57.123 339.337H214.796L198.982 482.651H30.6982Z" class="heat-map-tile-level-never"></path><path d="M198.776 482.651L214.651 339.337H372.331L367.068 482.651H198.776Z" class="heat-map-tile-level-never"></path><path d="M366.87 482.651L372.187 339.337H529.86L535.161 482.651H366.87Z" class="heat-map-tile-level-never"></path><path d="M534.955 482.651L529.722 339.337H687.394L703.246 482.651H534.955Z" class="heat-map-tile-level-never"></path><path d="M703.049 482.651L687.258 339.337H844.923L871.332 482.651H703.049Z" class="heat-map-tile-level-never"></path><path d="M0.464844 646.598L30.7059 482.578H198.99L180.891 646.598H0.464844Z" class="heat-map-tile-level-rarely"></path><path d="M180.624 646.598L198.792 482.578H367.075L361.058 646.598H180.624Z" class="heat-map-tile-level-mostly"></path><path d="M360.783 646.598L366.87 482.578H535.153L541.217 646.598H360.783Z" class="heat-map-tile-level-often"></path><path d="M540.943 646.598L534.956 482.578H703.24L721.384 646.598H540.943Z" class="heat-map-tile-level-never"></path><path d="M721.109 646.598L703.041 482.578H871.317L901.535 646.598H721.109Z" class="heat-map-tile-level-never"></path></svg> -->
-    </div>
-</div>
-<footer></footer>
-</div>
 </body>
 </html>
