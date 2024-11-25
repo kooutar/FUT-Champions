@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FUT Champions</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900">
     <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('images/bg.jpeg');">
+
         <header>
             <nav>
                 <img src="images/logo.png" alt="logo" class="w-24 lg:w-40">
             </nav>
         </header>
-        <div class="flex flex-col h-[80vh] gap-8 pl-12 pr-12 lg:flex-row">
-            <div class="bg-cover bg-center bg-no-repeat lg:w-1/2" style="background-image: url('images/terrain.jpeg');">
-                <div class="flex flex-col">
+        <div class="flex flex-col mb-2 gap-8 pl-12 pr-12 lg:flex-row">
+            <div class="bg-cover bg-center bg-no-repeat  " style="background-image: url('images/terrain.jpeg');">
+                <div class="flex flex-col ">
                     <div class="flex justify-center gap-12">
                             <img src="images/badge_gold.png" alt="" class="w-4 lg:w-16">
                             <img src="images/badge_gold.png" alt="" class="w-4 lg:w-16">
@@ -46,7 +47,7 @@
                 <button class="h-8 p-2 bg-yellow-500">Show all Players</button>
              </div>
              <div class="flex justify-center w-full">
-             <div class="grid grid-cols-4 w-full bg-green-500 h-full ">
+             <div class="grid grid-cols-4 w-full bg-green-500  ">
                <img class="w-24" src="images/example_1.png" alt="" srcset="">
                <img class="w-24" src="images/example_1.png" alt="" srcset="">
                <img class="w-24" src="images/example_1.png" alt="" srcset="">
@@ -55,7 +56,15 @@
             </div>
             </div>
         </div>
-        <footer class="h-[50vh]"></footer>
+        <footer class="bg-green-500 lg:flex gap-4">
+            <div class="flex flex-col p-4">
+             <img src="images/logo.png" alt="logo" class="w-24">
+             <p class="text-sm md:text-lg  lg:text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, quaerat tempore. Veritatis asperiores autem, aspernatur, temporibus animi, praesentium nemo quos veniam a ipsum similique maxime! Natus suscipit aliquid explicabo labore.</p>
+            </div>
+            
+            <img src="images/bestPlayers.jpg" alt="" srcset="" class="w-full lg:w-1/2 p-4">
+        </footer>
     </div>
+    
 </body>
 </html>
