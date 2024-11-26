@@ -332,10 +332,10 @@ carde.forEach((carde)=>{
         bgCarde.appendChild(bg);
        }
        formcarde.classList.remove('hidden')
-      }if(carde.id=="RM"){
+      }if(carde.id=="RW"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "RM")
+       let tab=players.filter(players=> players.position == "RW")
        for(i=0;i<tab.length;i++)
        {
         const bg=document.createElement('div');
@@ -386,10 +386,10 @@ carde.forEach((carde)=>{
         bgCarde.appendChild(bg);
        }
        formcarde.classList.remove('hidden')
-      }if(carde.id=="LM"){
+      }if(carde.id=="LW"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "LM")
+       let tab=players.filter(players=> players.position == "LW")
        for(i=0;i<tab.length;i++)
        {
         const bg=document.createElement('div');
@@ -482,6 +482,14 @@ carde.forEach((carde)=>{
 
     })
 })
+
+// fct ajouter Player a terrain
+function addPlayerToTerrain(cardePlayer ,idCarde)
+{
+   const baliseImgeCarde=document.getElementById(idCarde);
+   baliseImgeCarde.classList.add("hidden");
+   
+}
 
 
 // afficher les champs pour calculer statique selon position
