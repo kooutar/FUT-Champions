@@ -248,6 +248,7 @@ const carde=document.querySelectorAll('.carde');
 const bteAddPlayer=document.querySelector('#bteAddPlayer');
 const statistique=document.querySelector('#statistique');
 const bgCarde=document.querySelector('#bgCarde');
+const closeBteForListPlayers=document.querySelector('#closeBteForListPlayers')
 // const divImage=document.querySelector('#divImage');
 const divstatistique=document.querySelector('#divstatistique')
 const bteOuvrireModalAjout=document.querySelector('#bteOuvrireModalAjout');
@@ -266,6 +267,9 @@ let tabPlayers=[];
 bteOuvrireModalAjout.addEventListener('click',()=>{
     modaleAdd.classList.remove('hidden')
 })
+closeBteForListPlayers.addEventListener('click',()=>{
+    formcarde.classList.add('hidden')
+})
 closeBte.forEach((closeBte)=>{
     closeBte.addEventListener('click',()=>{
         modaleAdd.classList.add('hidden');
@@ -273,23 +277,209 @@ closeBte.forEach((closeBte)=>{
 });
 // 
 carde.forEach((carde)=>{
-    carde.addEventListener('click',()=>{
-        const divImage=document.createElement('div');
+    carde.addEventListener('click',()=>{ 
       if(carde.id=="LST"){
+        bgCarde.innerHTML=``
         console.log(carde.id)
        let tab=players.filter(players=> players.position == "ST")
        for(i=0;i<tab.length;i++)
        {
-       
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
         const img=document.createElement('img');
         img.src=tab[i].photo;
-        divImage.appendChild(img)
-
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
        }
-       bgCarde.appendChild(divImage)
        formcarde.classList.remove('hidden')
-
+      }if(carde.id=="GK"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+        let tab=players.filter(players=> players.position == "GK")
+        for(i=0;i<tab.length;i++)
+        {
+         const bg=document.createElement('div');
+         bg.style="background-image: url('images/badge_gold.png');"
+         bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+         const divImage=document.createElement('div');
+          divImage.classList.add("flex" ,"justify-center")
+         const img=document.createElement('img');
+         img.src=tab[i].photo;
+         divImage.appendChild(img);
+         bg.appendChild(divImage);
+         bgCarde.appendChild(bg);
+        }
+        formcarde.classList.remove('hidden')
+       } if(carde.id=="RST"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "ST")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="RM"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "RM")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="RCM"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "CM")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="LCM"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "CM")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="LM"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "LM")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="RB"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "RB")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="RCB"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "CB")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="LCB"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "CB")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
+      }if(carde.id=="LB"){
+        bgCarde.innerHTML=``
+        console.log(carde.id)
+       let tab=players.filter(players=> players.position == "LB")
+       for(i=0;i<tab.length;i++)
+       {
+        const bg=document.createElement('div');
+        bg.style="background-image: url('images/badge_gold.png');"
+        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
+        const divImage=document.createElement('div');
+         divImage.classList.add("flex" ,"justify-center")
+        const img=document.createElement('img');
+        img.src=tab[i].photo;
+        divImage.appendChild(img);
+        bg.appendChild(divImage);
+        bgCarde.appendChild(bg);
+       }
+       formcarde.classList.remove('hidden')
       }
+      
+      
+
     })
 })
 

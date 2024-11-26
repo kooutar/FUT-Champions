@@ -10,7 +10,7 @@
     <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('images/bg.jpeg');">
 <!--  debut modale -->
         <div id="modalAjout"  class=" flex justify-center items-center inset-0 fixed inset-0 bg-black/50 z-50 hidden ">
-            <form action="" class="bg-green-200 w-[500px] overflow-y-scroll max-h-[600px] text-black p-8 ">
+            <form action="" class="bg-[#E2E2B6] w-[800px] overflow-y-scroll max-h-[600px] text-black p-8 ">
                 <div class="flex justify-between">
                     <div class="flex gap-2 ">
                         <div class="h-8 w-2 bg-[#FEEE91]"></div>
@@ -64,7 +64,13 @@
                  
                 <button type="button" id="bteAddPlayer" onclick="addPlayer()">Add Player</button>
             </div>
-            <img src="images/imagePlayers-removebg-preview.png" alt="" srcset="" >
+            <div class="hidden lg:w-1/2 flex justify-center items-center  h-[500px]">
+                <div class="bg-center bg-cover bg-no-repeat w-[500px] h-[500px]" style="background-image: url('images/badge_gold.png');">
+                   <div class="Flex justify-center items-center bg-white">
+                    <img src="images/iconProfile-removebg-preview.png" alt="" srcset="">
+                   </div>
+                </div>
+            </div>
             </div>
             </form>
             <!-- -->
@@ -76,8 +82,11 @@
 <!-- fin modale -->
 <!--  -->
 <div id="formcarde" class="flex justify-center items-center inset-0 fixed inset-0 bg-black/50 z-50 hidden ">
-<div id="bgCarde" class="bg-cover bg-center bg-no-repeat w-[150px] h-[150px] " style="background-image: url('images/badge_gold.png');">
-   <!-- <div id=""></div> -->
+<div  class="flex flex-col bg-white p-8">
+   <div class="flex justify-end">
+    <button id="closeBteForListPlayers" class="closeBte">&times;</button>
+   </div>
+<div id="bgCarde"class="flex  bg-white p-8"></div>
 </div>
 </div>
 
@@ -92,21 +101,21 @@
             <div class="bg-cover bg-center bg-no-repeat  " style="background-image: url('images/terrain.jpeg');">
                 <div class="container-carde flex flex-col ">
                     <div class="flex justify-center gap-12">
-                            <img src="images/badge_gold.png" alt="RST" class="carde w-4  lg:w-16">
+                            <img src="images/badge_gold.png" id="RST" class="carde w-4  lg:w-16">
                             <img src="images/badge_gold.png" id="LST" class="carde w-4 lg:w-16">
                     </div>
                     <div class=" pb-12 flex flex-col">
-                    <div class="flex justify-center gap-[8vw]">
-                        <img src="images/badge_gold.png" alt="RM" class="carde w-4  lg:w-16">
-                        <img src="images/badge_gold.png" alt="RCM" class="carde w-4 lg:w-16">
-                        <img src="images/badge_gold.png" alt="LCM" class="carde w-4 lg:w-16">
-                        <img src="images/badge_gold.png" alt="LM" class="carde w-4 lg:w-16">
+                    <div class="flex justify-center gap-12 mt-16">
+                        <img src="images/badge_gold.png" id="RM" class="carde w-4  lg:w-16">
+                        <img src="images/badge_gold.png" id="RCM" class="carde w-4 lg:w-16">
+                        <img src="images/badge_gold.png" id="LCM" class="carde w-4 lg:w-16">
+                        <img src="images/badge_gold.png" id="LM" class="carde w-4 lg:w-16">
                 </div>
                   
                     <div class="flex justify-center gap-[8vw] mt-[100px] ">
-                            <img src="images/badge_gold.png" alt="RB" class="carde w-4 lg:w-16">
-                            <img src="images/badge_gold.png" alt="RCB" class="carde w-4 lg:w-16">
-                            <img src="images/badge_gold.png" alt="LCB" class="carde w-4 lg:w-16">
+                            <img src="images/badge_gold.png" id="RB" class="carde w-4 lg:w-16">
+                            <img src="images/badge_gold.png" id="RCB" class="carde w-4 lg:w-16">
+                            <img src="images/badge_gold.png" id="LCB" class="carde w-4 lg:w-16">
                             <img src="images/badge_gold.png" id="LB" alt="" class="carde w-4 lg:w-16">
                     </div>
                 </div>
@@ -118,7 +127,7 @@
             <!-- div echanges -->
              <div class="flex flex-col gap-4 bg-gray-900 lg:w-1/2 ">
              <div class="flex justify-end w-full ">
-                <button class="h-8 p-2 bg-yellow-500">Show all Players</button>
+                <button id="bteOuvrireModalAjout" class="h-8 p-2 bg-[#03346E] text-white rounded-lg">add player</button>
              </div>
              <div class="flex justify-center w-full">
              <div class="grid grid-cols-4 w-full   ">
@@ -129,12 +138,10 @@
              </div>
              
             </div>
-            <div class="flex justify-end w-full ">
-                <button id="bteOuvrireModalAjout" class="h-8 p-2 bg-yellow-500">add player</button>
-             </div>
+            
             </div>
         </div>
-        <footer class="bg-green-500 lg:flex gap-4">
+        <footer class="bg-[#03346E] lg:flex gap-4">
             <div class="flex flex-col p-4">
              <img src="images/logo.png" alt="logo" class="w-24">
              <p class="text-sm md:text-lg  lg:text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, quaerat tempore. Veritatis asperiores autem, aspernatur, temporibus animi, praesentium nemo quos veniam a ipsum similique maxime! Natus suscipit aliquid explicabo labore.</p>
