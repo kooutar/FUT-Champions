@@ -284,16 +284,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "ST")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="GK"){
@@ -302,16 +293,7 @@ carde.forEach((carde)=>{
         let tab=players.filter(players=> players.position == "GK")
         for(i=0;i<tab.length;i++)
         {
-         const bg=document.createElement('div');
-         bg.style="background-image: url('images/badge_gold.png');"
-         bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-         const divImage=document.createElement('div');
-          divImage.classList.add("flex" ,"justify-center")
-         const img=document.createElement('img');
-         img.src=tab[i].photo;
-         divImage.appendChild(img);
-         bg.appendChild(divImage);
-         bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
         }
         formcarde.classList.remove('hidden')
        } if(carde.id=="RST"){
@@ -320,16 +302,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "ST")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RW"){
@@ -338,16 +311,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "RW")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RCM"){
@@ -356,16 +320,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CM")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LCM"){
@@ -374,16 +329,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CM")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LW"){
@@ -392,16 +338,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "LW")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RB"){
@@ -410,16 +347,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "RB")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RCB"){
@@ -428,16 +356,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CB")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LCB"){
@@ -446,16 +365,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CB")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LB"){
@@ -464,25 +374,103 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "LB")
        for(i=0;i<tab.length;i++)
        {
-        const bg=document.createElement('div');
-        bg.style="background-image: url('images/badge_gold.png');"
-        bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]");
-        const divImage=document.createElement('div');
-         divImage.classList.add("flex" ,"justify-center")
-        const img=document.createElement('img');
-        img.src=tab[i].photo;
-        divImage.appendChild(img);
-        bg.appendChild(divImage);
-        bgCarde.appendChild(bg);
+        styleCarde(bgCarde, tab[i])
        }
        formcarde.classList.remove('hidden')
       }
-      
-      
-
     })
 })
 
+// fct ajoute 
+  function  addCriteriaPlayer(parentDiv ,playerPosition ,player)
+  {
+     if(playerPosition=="GK")
+     {
+      parentDiv.innerHTML=`
+          <div class="flex flex-col">
+            <p class="text-[9px]">RAT</p>
+            <p class="text-[9px]">${player.rating}</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">DIV</p>
+            <p class="text-[9px]">${player.diving}</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">HAN</p>
+            <p class="text-[9px]">${player.handling}</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">KIC</p>
+            <p class="text-[9px]">${player.kicking}</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">REF</p>
+            <p class="text-[9px]">${player.reflexes}</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">SPE</p>
+            <p class="text-[9px]">${player.speed}</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">POS</p>
+            <p class="text-[9px]">${player.positioning}</p>
+          </div>
+        
+      `
+     }else{
+      parentDiv.innerHTML=`
+      
+          <div class="flex flex-col">
+            <p class="text-[9px]">RAT</p>
+            <p class="text-[9px]">50</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">PAC</p>
+            <p class="text-[9px]">50</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">SHO</p>
+            <p class="text-[9px]">50</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">DRI</p>
+            <p class="text-[9px]">50</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">DEF</p>
+            <p class="text-[9px]">50</p>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[9px]">PHY</p>
+            <p class="text-[9px]">50</p>
+          </div>
+        
+      `
+     }
+  }
+  // fct style carde
+  function styleCarde(divContainer, player)
+  {
+    const bg=document.createElement('div');
+    bg.style="background-image: url('images/badge_gold.png');"
+    bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]" , "items-center","pt-4");
+    const divImage=document.createElement('div');
+     divImage.classList.add("flex" ,"flex-col","justify-center")
+    const img=document.createElement('img');
+    img.classList.add("h-16")
+    const name= document.createElement('h6');
+    name.classList.add("text-center","text-[9px]");
+    const  Criteria=document.createElement('div');
+    Criteria.classList.add("flex","justify-center")
+    img.src=player.photo;
+    name.textContent=player.name;
+    addCriteriaPlayer(Criteria,player.position,player)
+    divImage.appendChild(img);
+    divImage.appendChild(name);
+    bg.appendChild(divImage);
+    bg.appendChild(Criteria);
+    divContainer.appendChild(bg);  
+  }
 // fct ajouter Player a terrain
 function addPlayerToTerrain(cardePlayer ,idCarde)
 {
@@ -490,6 +478,7 @@ function addPlayerToTerrain(cardePlayer ,idCarde)
    baliseImgeCarde.classList.add("hidden");
    
 }
+// fct add flag and club
 
 
 // afficher les champs pour calculer statique selon position
