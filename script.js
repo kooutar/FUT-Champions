@@ -388,7 +388,7 @@ carde.forEach((carde)=>{
      {
       parentDiv.innerHTML+=`
           <div class="flex justify-center">
-    <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
+    <div class="cardeGK flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
         <div class="flex flex-col ">
             <div class="flex">
                 <div class="absolute top-[310px] flex flex-col">
@@ -424,45 +424,52 @@ carde.forEach((carde)=>{
             <p class="text-[9px]">POS</p>
             <p class="text-[9px]">${player.positioning}</p>
           </div>
-          </div
-        
+          </div 
       `
      }else{
       parentDiv.innerHTML+=`
-          <div class="flex justify-center">
-    <div class=" flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
-        <div class="flex flex-col ">
+         <div class="flex justify-center">
+    <div class="cardeNonGK flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4" style="background-image: url('images/badge_gold.png');">
+        <div class="flex flex-col">
             <div class="flex">
                 <div class="absolute top-[310px] flex flex-col">
-                <p class="mb-[-10px]">${player.rating}</p>
-                 <p>${player.position}</p>
-              </div>
-            <img src="${player.photo}" class="h-[100px] w-24 relative">
-           </div>
+                    <p class="mb-[-10px]">${player.rating}</p>
+                    <p>${player.position}</p>
+                </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
+                <img src="${player.photo}" class="h-[100px] w-24 relative">
+            </div>
             <h6 class="text-center text-sm">${player.name}</h6>
         </div>
-        <div class="flex justify-center gap-2">
-          <div class="flex flex-col">
-            <p class="text-[9px]">PAC</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">SHO</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">DRI</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">DEF</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">PHY</p>
-            <p class="text-[9px]">50</p>
-          </div>
         
+        <div class="flex justify-center gap-2">
+            <div class="flex flex-col">
+                <p class="text-[9px]">PAC</p>
+                <p class="text-[9px]">${player.pace}</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-[9px]">SHO</p>
+                <p class="text-[9px]">${player.shooting}</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-[9px]">DRI</p>
+                <p class="text-[9px]">${player.dribbling}</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-[9px]">DEF</p>
+                <p class="text-[9px]">${player.defending}</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-[9px]">PHY</p>
+                <p class="text-[9px]">${player.physical}</p>
+            </div> 
+        </div>
+        <div class="flex gap-4">
+                <img src="${player.flag}" alt="" srcset="" class="w-4">
+                <img src="${player.logo}" alt="" srcset="" class="w-4">
+            </div>
+    </div>
+</div>
+
       `
      }
   }
