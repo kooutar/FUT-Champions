@@ -241,6 +241,26 @@ let players = [
     }
   ];
 
+  // Lire le fichier JSON local (data.json) dans le même répertoire que ton script JS
+// fetch('players.json')
+// .then(response => {
+
+//   if (!response.ok) {
+//     throw new Error('Erreur de chargement du fichier JSON');
+//   }
+
+//   return response.json();
+// })
+// .then(data => {
+  
+//   const playersArray = data.players;
+  
+// })
+// .catch(error => {
+//   console.error('Erreur:', error);
+// });
+
+
 const formcarde=document.querySelector('#formcarde')
 const modaleAdd=document.querySelector('#modalAjout');
 const closeBte=document.querySelectorAll('.closeBte');
@@ -284,7 +304,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "ST")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="GK"){
@@ -293,7 +313,7 @@ carde.forEach((carde)=>{
         let tab=players.filter(players=> players.position == "GK")
         for(i=0;i<tab.length;i++)
         {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
         }
         formcarde.classList.remove('hidden')
        } if(carde.id=="RST"){
@@ -302,7 +322,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position =="ST")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RW"){
@@ -311,7 +331,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "RW")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RCM"){
@@ -320,7 +340,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CM")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LCM"){
@@ -329,7 +349,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CM")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LW"){
@@ -338,7 +358,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "LW")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RB"){
@@ -347,7 +367,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "RB")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RCB"){
@@ -356,7 +376,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CB")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LCB"){
@@ -365,7 +385,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "CB")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LB"){
@@ -374,7 +394,7 @@ carde.forEach((carde)=>{
        let tab=players.filter(players=> players.position == "LB")
        for(i=0;i<tab.length;i++)
        {
-        styleCarde(bgCarde, tab[i])
+        styleCarde(bgCarde, tab[i],carde)
        }
        formcarde.classList.remove('hidden')
       }
@@ -382,13 +402,13 @@ carde.forEach((carde)=>{
 })
 
 // fct ajoute 
-  function  addCriteriaPlayer(parentDiv ,playerPosition ,player)
+  function  addCriteriaPlayer(parentDiv ,playerPosition ,player,carde)
   {
      if(playerPosition=="GK")
      {
       parentDiv.innerHTML+=`
           <div class="flex justify-center">
-    <div class="cardeGK flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
+    <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
         <div class="flex flex-col ">
             <div class="flex">
                 <div class="absolute top-[310px] flex flex-col">
@@ -429,7 +449,7 @@ carde.forEach((carde)=>{
      }else{
       parentDiv.innerHTML+=`
          <div class="flex justify-center">
-    <div class="cardeNonGK flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4" style="background-image: url('images/badge_gold.png');">
+    <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4" style="background-image: url('images/badge_gold.png');">
         <div class="flex flex-col">
             <div class="flex">
                 <div class="absolute top-[310px] flex flex-col">
@@ -469,15 +489,15 @@ carde.forEach((carde)=>{
             </div>
     </div>
 </div>
-
       `
      }
+     ajoutToTerrain(carde)
   }
   // fct style carde
-  function styleCarde(divContainer, player)
+  function styleCarde(divContainer, player,carde)
   {
     
-    addCriteriaPlayer(divContainer,player.position,player)
+    addCriteriaPlayer(divContainer,player.position,player,carde)
   }
 // fct ajouter Player a terrain
 function addPlayerToTerrain(cardePlayer ,idCarde)
@@ -486,7 +506,19 @@ function addPlayerToTerrain(cardePlayer ,idCarde)
    baliseImgeCarde.classList.add("hidden");
    
 }
-// fct add flag and club
+// fct ajouter palyer a terrain
+function ajoutToTerrain(carde){
+  const cardeAjoutTerrain=document.querySelectorAll('.cardeAjoutTerrain');
+  // console.log(cardeAjoutTerrain)
+  cardeAjoutTerrain.forEach(carte=>{
+    carte.addEventListener('click',()=>{
+      carde.classList.add('hidden')
+     carde.parentElement.appendChild(carte)
+      formcarde.classList.add('hidden')
+    })
+  })
+}
+
 
 
 // afficher les champs pour calculer statique selon position
