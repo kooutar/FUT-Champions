@@ -299,7 +299,7 @@ carde.forEach((carde)=>{
        } if(carde.id=="RST"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "ST")
+       let tab=players.filter(players=> players.position =="ST")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i])
@@ -386,11 +386,20 @@ carde.forEach((carde)=>{
   {
      if(playerPosition=="GK")
      {
-      parentDiv.innerHTML=`
-          <div class="flex flex-col">
-            <p class="text-[9px]">RAT</p>
-            <p class="text-[9px]">${player.rating}</p>
-          </div>
+      parentDiv.innerHTML+=`
+          <div class="flex justify-center">
+    <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
+        <div class="flex flex-col ">
+            <div class="flex">
+                <div class="absolute top-[180px] flex flex-col">
+                <p class="mb-[-10px]">${player.rating}</p>
+                 <p>${player.position}</p>
+              </div>
+            <img src="${player.photo}" class="h-[100px] w-24 relative">
+           </div>
+            <h6 class="text-center text-sm">${player.name}</h6>
+        </div>
+        <div class="flex justify-center gap-2">
           <div class="flex flex-col">
             <p class="text-[9px]">DIV</p>
             <p class="text-[9px]">${player.diving}</p>
@@ -415,15 +424,24 @@ carde.forEach((carde)=>{
             <p class="text-[9px]">POS</p>
             <p class="text-[9px]">${player.positioning}</p>
           </div>
+          </div
         
       `
      }else{
-      parentDiv.innerHTML=`
-      
-          <div class="flex flex-col">
-            <p class="text-[9px]">RAT</p>
-            <p class="text-[9px]">50</p>
-          </div>
+      parentDiv.innerHTML+=`
+          <div class="flex justify-center">
+    <div class=" flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
+        <div class="flex flex-col ">
+            <div class="flex">
+                <div class="absolute top-[180px] flex flex-col">
+                <p class="mb-[-10px]">${player.rating}</p>
+                 <p>${player.position}</p>
+              </div>
+            <img src="${player.photo}" class="h-[100px] w-24 relative">
+           </div>
+            <h6 class="text-center text-sm">${player.name}</h6>
+        </div>
+        <div class="flex justify-center gap-2">
           <div class="flex flex-col">
             <p class="text-[9px]">PAC</p>
             <p class="text-[9px]">50</p>
@@ -451,25 +469,26 @@ carde.forEach((carde)=>{
   // fct style carde
   function styleCarde(divContainer, player)
   {
-    const bg=document.createElement('div');
-    bg.style="background-image: url('images/badge_gold.png');"
-    bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]" , "items-center","pt-4");
-    const divImage=document.createElement('div');
-     divImage.classList.add("flex" ,"flex-col","justify-center")
-    const img=document.createElement('img');
-    img.classList.add("h-16")
-    const name= document.createElement('h6');
-    name.classList.add("text-center","text-[9px]");
-    const  Criteria=document.createElement('div');
-    Criteria.classList.add("flex","justify-center")
-    img.src=player.photo;
-    name.textContent=player.name;
-    addCriteriaPlayer(Criteria,player.position,player)
-    divImage.appendChild(img);
-    divImage.appendChild(name);
-    bg.appendChild(divImage);
-    bg.appendChild(Criteria);
-    divContainer.appendChild(bg);  
+    // const bg=document.createElement('div');
+    // bg.style="background-image: url('images/badge_gold.png');"
+    // bg.classList.add("bg-cover","bg-center","bg-no-repeat","w-[150px]","h-[150px]","items-center","pt-4");
+    // const divImage=document.createElement('div');
+    //  divImage.classList.add("flex" ,"flex-col","justify-center")
+    // const img=document.createElement('img');
+    // img.classList.add("h-[100px]","w-24","relative")
+    // const name= document.createElement('h6');
+    // name.classList.add("text-center","text-sm");
+    // const  Criteria=document.createElement('div');
+    // Criteria.classList.add("flex","justify-center")
+    // img.src=player.photo;
+    // name.textContent=player.name;
+    // addCriteriaPlayer(Criteria,player.position,player)
+    // divImage.appendChild(img);
+    // divImage.appendChild(name);
+    // bg.appendChild(divImage);
+    // bg.appendChild(Criteria);
+    // divContainer.appendChild(bg);  
+    addCriteriaPlayer(divContainer,player.position,player)
   }
 // fct ajouter Player a terrain
 function addPlayerToTerrain(cardePlayer ,idCarde)
