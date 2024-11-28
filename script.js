@@ -241,24 +241,7 @@ let players = [
     }
   ];
 
-  // Lire le fichier JSON local (data.json) dans le même répertoire que ton script JS
-// fetch('players.json')
-// .then(response => {
 
-//   if (!response.ok) {
-//     throw new Error('Erreur de chargement du fichier JSON');
-//   }
-
-//   return response.json();
-// })
-// .then(data => {
-  
-//   const playersArray = data.players;
-  
-// })
-// .catch(error => {
-//   console.error('Erreur:', error);
-// });
 
 
 const formcarde=document.querySelector('#formcarde')
@@ -506,33 +489,28 @@ carde.forEach((carde)=>{
     
     addCriteriaPlayer(divContainer,player.position,player,carde)
   }
-// fct ajouter Player a terrain
-// function addPlayerToTerrain(cardePlayer ,idCarde)
-// {
-//    const baliseImgeCarde=document.getElementById(idCarde);
-//    baliseImgeCarde.classList.add("hidden");
-   
-// }
+
 // fct ajouter palyer a terrain
 function ajoutToTerrain(carde){
   const cardeAjoutTerrain=document.querySelectorAll('.cardeAjoutTerrain');
-  let countClick=0;
   // console.log(cardeAjoutTerrain)
   cardeAjoutTerrain.forEach(carte=>{
     let countClick=0;
+  
     console.log(countClick);
     carte.addEventListener('click',()=>{
+      carde.classList.add('hidden')
+          console.log(carte)
+  
+       carde.parentElement.appendChild(carte)
+        formcarde.classList.add('hidden')
       countClick++
-      if(countClick%2!=0){
-        console.log("premier click");
-        carde.classList.add('hidden')
-        carde.parentElement.appendChild(carte)
-         formcarde.classList.add('hidden')
-      }
-      else{console.log("deuxième click")
-        confirm("vous voulez changer la postion de ce player ")
-      }
-     
+      carte.addEventListener('click',()=>{
+        formcarde.classList.remove('hidden')
+        ajoutToTerrain(carte)
+      })
+
+      
     })
   })
 }
