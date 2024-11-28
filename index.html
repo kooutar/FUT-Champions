@@ -10,76 +10,75 @@
 <body>
     <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('images/bg.jpeg');">
 <!--  debut modale -->
-        <div id="modalAjout"  class=" flex justify-center items-center inset-0 fixed inset-0 bg-black/50 z-50 hidden ">
-            <form action="" class="bg-[#E2E2B6] w-[800px] overflow-y-scroll max-h-[600px] text-black p-8 ">
-                <div class="flex justify-between">
-                    <div class="flex gap-2 ">
-                        <div class="h-8 w-2 bg-[#FEEE91]"></div>
-                    <h1 class="font-parkinsans">Add Player</h1>
-                    </div>
-                    <button id="closeBte" class="closeBte">&times;</button>
-                </div>
-                <div class=" flex justify-between"> 
-                <div id="containteForm " class="w-[300px] flex flex-col gap-4">
-                <div class="flex flex-col gap-2">
-                    <label for="" >Player's name</label>
-                    <input id="namePlayer" type="text" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's name">
-                </div> 
-                <div class="flex flex-col gap-2">
-                    <label for="" >Player's picture</label>
-                    <input id="imagPlayer" type="text" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's name">
-                </div> 
-                <div class="flex flex-col gap-2">
-                    <label for="" >Flag</label>
-                    <input id="flag" type="text" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's name">
-                </div> 
-                <div class="flex flex-col gap-2">
-                    <label for="" >club logo</label>
-                    <input id="clubLogo" type="text" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's name">
-                </div> 
-                <div class="flex flex-col gap-2">
-                    <label for="" >position</label>
-                   <select name="" id="positionPlayer">
-                    <option value="" disabled selected>-- Sélectionnez une option --</option>
-                    <option value="GK">GK</option>
-                    <option value="LB">LB</option>
-                    <option value="CB1">CB1</option>
-                    <option value="CB2">CB2</option>
-                    <option value="RB">RB</option>
-                    <option value="CML">CML</option>
-                    <option value="CM">CM</option>
-                    <option value="CMR">CMR</option>
-                    <option value="LW">LW</option>
-                    <option value="ST">ST</option>
-                    <option value="RW">RW</option>
-                    
-                   </select>
-                </div> 
-                <div id="statistique" class="flex flex-col gap-2">
-                 
-                </div>
-                <div id="note" class="flex flex-col gap-2">
-                    <!-- <label for="" >Note</label>
-                    <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note"> -->
-                </div> 
-                 
-                <button type="button" id="bteAddPlayer" onclick="addPlayer()">Add Player</button>
+<div id="modalAjout" class=" flex justify-center items-center  fixed inset-0 bg-black/50 z-50 hidden ">
+    <div class=" w-full md:w-1/2  bg-[#03346E] p-4 rounded-lg overflow-y-scroll max-h-[650px]">
+        <div class="flex justify-between ">
+            <img src="images/logo.png" alt="" class="w-16">
+            <button id="closeBte" class="closeBte text-[25px]">&times;</button>
+        </div>
+        <div class="w-full h-1 bg-gray-500"></div>
+         <form action="" class="flex flex-col gap-2">
+            <div class="flex flex-col gap-1">
+                <label for="" class="text-white">Nom Player</label>
+                <input  id="namePlayer" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
             </div>
-            <div class="hidden lg:w-1/2 flex justify-center items-center  h-[500px]">
-                <div class="bg-center bg-cover bg-no-repeat w-[500px] h-[500px]" style="background-image: url('images/badge_gold.png');">
-                   <div class="Flex justify-center items-center bg-white">
-                    <img src="images/iconProfile-removebg-preview.png" alt="" srcset="">
-                   </div>
+            <div class="flex flex-col gap-1">
+                <label for="" class="text-white">photo Player</label>
+                <input  id="imagPlayer" type="text" placeholder="photo player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
+            </div>
+            <!-- <div class="flex flex-col gap-1">
+                <label for="">Nom Player</label>
+                <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
+            </div> -->
+            <div class="flex gap-2">
+                <div class="flex flex-col gap-1 w-1/2">
+                    <label for="" class="text-white">country</label>
+                    <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
                 </div>
+                <div class="flex flex-col gap-1 w-1/2">
+                    <label for="" class="text-white">flag</label>
+                    <input id="flag" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                </div>
+           </div>
+           <div class="flex gap-2">
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">country</label>
+                <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
             </div>
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">club</label>
+                <input id="clubLogo" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
             </div>
-            </form>
-            <!-- -->
-        
-        <div>
+       </div>
+       <div class="flex flex-col gap-2 ">
+        <label for=""class="text-white" >position</label>
+       <select name="" id="positionPlayer" class="rounded-lg p-2 border-2 text-black focus:outline-none focus:border-blue-500 hover:border-blue-300">
+        <option value="" disabled selected>-- Sélectionnez une option --</option>
+        <option value="GK">GK</option>
+        <option value="LB">LB</option>
+        <option value="CB1">CB1</option>
+        <option value="CB2">CB2</option>
+        <option value="RB">RB</option>
+        <option value="CML">CML</option>
+        <option value="CM">CM</option>
+        <option value="CMR">CMR</option>
+        <option value="LW">LW</option>
+        <option value="ST">ST</option>
+        <option value="RW">RW</option>
+       </select>
+    </div>
+    <div id="statistique" class="flex flex-col gap-2">
+ 
+    </div>
+    <button type="button" id="bteAddPlayer" onclick="addPlayer()" class="bg-gray-400 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300">
+        Add Player
+      </button>
+      
+         </form>
+    </div>
+</div>
 
-        </div>
-        </div>
+
 <!-- fin modale -->
 <!--  -->
 <div id="formcarde" class="hidden  bg-black/50 fixed inset-0 z-50 flex justify-center items-center">
@@ -113,26 +112,26 @@
             <div class="bg-cover bg-center bg-no-repeat  " style="background-image: url('images/terrain.jpeg');">
                 <div class="container-carde flex flex-col ">
                     <div class="flex justify-center gap-12" id="attack">
-                            <div><img src="images/badge_gold.png" id="RST" class="carde w-4  lg:w-24" data-position="0"></div>
-                            <div><img src="images/badge_gold.png" id="LST" class="carde w-4 lg:w-24" date-position="1"></div>
+                            <div><img src="images/gold84.png" id="RST" class="carde w-4  lg:w-24" data-position="0"></div>
+                            <div><img src="images/gold84.png" id="LST" class="carde w-4 lg:w-24" date-position="1"></div>
                     </div>
                     <div class=" pb-12 flex flex-col" >
                     <div class="flex justify-center gap-12 mt-16" id="millieu">
-                       <div> <img src="images/badge_gold.png" id="RW" class="carde w-4  lg:w-24" data-position="0"></div>
-                        <div><img src="images/badge_gold.png" id="RCM" class="carde w-4 lg:w-24" data-position="1"></div>
-                       <div> <img src="images/badge_gold.png" id="LCM" class="carde w-4 lg:w-24" data-position="2"></div>
-                        <div><img src="images/badge_gold.png" id="LW" class="carde w-4 lg:w-24" data-position="3"></div>
+                       <div> <img src="images/gold84.png" id="RW" class="carde w-4  lg:w-24" data-position="0"></div>
+                        <div><img src="images/gold84.png" id="RCM" class="carde w-4 lg:w-24" data-position="1"></div>
+                       <div> <img src="images/gold84.png" id="LCM" class="carde w-4 lg:w-24" data-position="2"></div>
+                        <div><img src="images/gold84.png" id="LW" class="carde w-4 lg:w-24" data-position="3"></div>
                 </div>
                   
                     <div class="flex justify-center gap-[8vw] mt-[100px]" id="defance">
-                            <div><img src="images/badge_gold.png" id="RB" class="carde w-4 lg:w-24" data-position="0"></div>
-                            <div><img src="images/badge_gold.png" id="RCB" class="carde w-4 lg:w-24" data-position="1"></div>
-                            <div><img src="images/badge_gold.png" id="LCB" class="carde w-4 lg:w-24" date-position="3"></div>
-                            <div><img src="images/badge_gold.png" id="LB" alt="" class="carde w-4 lg:w-24" data-position="4"></div>
+                            <div><img src="images/gold84.png" id="RB" class="carde w-4 lg:w-24" data-position="0"></div>
+                            <div><img src="images/gold84.png" id="RCB" class="carde w-4 lg:w-24" data-position="1"></div>
+                            <div><img src="images/gold84.png" id="LCB" class="carde w-4 lg:w-24" date-position="3"></div>
+                            <div><img src="images/gold84.png" id="LB" alt="" class="carde w-4 lg:w-24" data-position="4"></div>
                     </div>
                 </div>
                     <div class="flex justify-center" id="gool">
-                            <img src="images/badge_gold.png" id="GK" alt="" class="carde w-4 lg:w-24" data-position="0">
+                            <img src="images/gold84.png" id="GK" alt="" class="carde w-4 lg:w-24" data-position="0">
                     </div>
                 </div>
             </div>
@@ -142,11 +141,8 @@
                 <button id="bteOuvrireModalAjout" class="h-8 p-2 bg-[#03346E] text-white rounded-lg">add player</button>
              </div>
              <div class="flex justify-center w-full">
-             <div class="grid grid-cols-4 w-full   ">
-               <img class="w-24" src="images/example_1.png" alt="" srcset="">
-               <img class="w-24" src="images/example_1.png" alt="" srcset="">
-               <img class="w-24" src="images/example_1.png" alt="" srcset="">
-               <img class="w-24" src="images/example_1.png" alt="" srcset="">
+             <div id="containerChangement"class="grid grid-cols-4 w-full   ">
+               
              </div>
              
             </div>

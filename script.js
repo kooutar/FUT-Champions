@@ -261,7 +261,10 @@ const positionPlayer=document.querySelector('#positionPlayer');
 const flag=document.querySelector('#flag');
 const clubLogo=document.querySelector('#clubLogo');
 const statusPlayer=document.querySelector('#status');
+// *****************************************************
 
+// *************************************************
+const containerChangement=document.querySelector('#containerChangement')
 let tab=[];
 
 // fermeture de modal
@@ -384,114 +387,110 @@ carde.forEach((carde)=>{
     })
 })
 
-// fct ajoute 
-  function  addCriteriaPlayer(parentDiv ,playerPosition ,player,carde)
-  {
-     if(playerPosition=="GK")
-     {
-      parentDiv.innerHTML+=`
-          <div class="flex justify-center">
-    <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
-        <div class="flex flex-col ">
-            <div class="flex">
-                <div class=" top-[310px] flex flex-col mt-4">
-                <p class="">${player.rating}</p>
-                 <p>${player.position}</p>
-              </div>
-            <img src="${player.photo}" class="h-[100px] w-24 relative">
-           </div>
-            <h6 class="text-center text-sm">${player.name}</h6>
-        </div>
-        <div class="flex justify-center gap-1">
-          <div class="flex flex-col">
-            <p class="text-[9px]">DIV</p>
-            <p class="text-[9px]">${player.diving}</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">HAN</p>
-            <p class="text-[9px]">${player.handling}</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">KIC</p>
-            <p class="text-[9px]">${player.kicking}</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">REF</p>
-            <p class="text-[9px]">${player.reflexes}</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">SPE</p>
-            <p class="text-[9px]">${player.speed}</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">POS</p>
-            <p class="text-[9px]">${player.positioning}</p>
-          </div>
-          </div>
-           <div class="flex gap-4">
-                <img src="${player.flag}" alt="" srcset="" class="w-4">
-                <img src="${player.logo}" alt="" srcset="" class="w-4">
-            </div>
-              </div>
-</div>
-
-      `
-     }else{
-      parentDiv.innerHTML+=`
-         <div class="flex justify-center">
-    <div class="cardeAjoutTerrain  flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4 " style="background-image: url('images/badge_gold.png');">
-        <div class="flex flex-col">
-            <div class="flex">
-                <div class="top-[310px] flex flex-col mt-4">
-                    <p class="">${player.rating}</p>
-                    <p>${player.position}</p>
-                </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
-                <img src="${player.photo}" class="h-[100px] w-24 relative">
-            </div>
-            <h6 class="text-center text-sm">${player.name}</h6>
-        </div>
-        
-        <div class="flex justify-center gap-2">
-            <div class="flex flex-col">
-                <p class="text-[9px]">PAC</p>
-                <p class="text-[9px]">${player.pace}</p>
-            </div>
-            <div class="flex flex-col">
-                <p class="text-[9px]">SHO</p>
-                <p class="text-[9px]">${player.shooting}</p>
-            </div>
-            <div class="flex flex-col">
-                <p class="text-[9px]">DRI</p>
-                <p class="text-[9px]">${player.dribbling}</p>
-            </div>
-            <div class="flex flex-col">
-                <p class="text-[9px]">DEF</p>
-                <p class="text-[9px]">${player.defending}</p>
-            </div>
-            <div class="flex flex-col">
-                <p class="text-[9px]">PHY</p>
-                <p class="text-[9px]">${player.physical}</p>
-            </div> 
-        </div>
-        <div class="flex gap-4">
-                <img src="${player.flag}" alt="" srcset="" class="w-4">
-                <img src="${player.logo}" alt="" srcset="" class="w-4">
-            </div>
-    </div>
-</div>
-      `
-     }
-     ajoutToTerrain(carde)
-  }
   // fct style carde
-  function styleCarde(divContainer, player,carde)
+  function styleCarde(parentDiv, player,carde)
   {
     
-    addCriteriaPlayer(divContainer,player.position,player,carde)
+    if(player.position=="GK")
+      {
+       parentDiv.innerHTML+=`
+           <div class="flex justify-center">
+     <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+         <div class="flex flex-col ">
+             <div class="flex">
+                 <div class=" top-[310px] flex flex-col mt-4">
+                 <p class="">${player.rating}</p>
+                  <p>${player.position}</p>
+               </div>
+             <img src="${player.photo}" class="h-[100px] w-24 relative">
+            </div>
+             <h6 class="text-center text-sm">${player.name}</h6>
+         </div>
+         <div class="flex justify-center gap-1">
+           <div class="flex flex-col">
+             <p class="text-[9px]">DIV</p>
+             <p class="text-[9px]">${player.diving}</p>
+           </div>
+           <div class="flex flex-col">
+             <p class="text-[9px]">HAN</p>
+             <p class="text-[9px]">${player.handling}</p>
+           </div>
+           <div class="flex flex-col">
+             <p class="text-[9px]">KIC</p>
+             <p class="text-[9px]">${player.kicking}</p>
+           </div>
+           <div class="flex flex-col">
+             <p class="text-[9px]">REF</p>
+             <p class="text-[9px]">${player.reflexes}</p>
+           </div>
+           <div class="flex flex-col">
+             <p class="text-[9px]">SPE</p>
+             <p class="text-[9px]">${player.speed}</p>
+           </div>
+           <div class="flex flex-col">
+             <p class="text-[9px]">POS</p>
+             <p class="text-[9px]">${player.positioning}</p>
+           </div>
+           </div>
+            <div class="flex gap-4">
+                 <img src="${player.flag}" alt="" srcset="" class="w-4">
+                 <img src="${player.logo}" alt="" srcset="" class="w-4">
+             </div>
+               </div>
+ </div>
+ 
+       `
+      }else{
+       parentDiv.innerHTML+=`
+          <div class="flex justify-center">
+     <div class="cardeAjoutTerrain  flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
+         <div class="flex flex-col">
+             <div class="flex">
+                 <div class="top-[310px] flex flex-col mt-4">
+                     <p class="">${player.rating}</p>
+                     <p>${player.position}</p>
+                 </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
+                 <img src="${player.photo}" class="h-[100px] w-24 relative">
+             </div>
+             <h6 class="text-center text-sm">${player.name}</h6>
+         </div>
+         
+         <div class="flex justify-center gap-2">
+             <div class="flex flex-col">
+                 <p class="text-[9px]">PAC</p>
+                 <p class="text-[9px]">${player.pace}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">SHO</p>
+                 <p class="text-[9px]">${player.shooting}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">DRI</p>
+                 <p class="text-[9px]">${player.dribbling}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">DEF</p>
+                 <p class="text-[9px]">${player.defending}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">PHY</p>
+                 <p class="text-[9px]">${player.physical}</p>
+             </div> 
+         </div>
+         <div class="flex gap-4">
+                 <img src="${player.flag}" alt="" srcset="" class="w-4">
+                 <img src="${player.logo}" alt="" srcset="" class="w-4">
+             </div>
+     </div>
+ </div>
+       `
+      }
+      ajoutToTerrain(carde)
   }
 
 // fct ajouter palyer a terrain
 function ajoutToTerrain(carde){
+  let nbrClick=0;
   const cardeAjoutTerrain=document.querySelectorAll('.cardeAjoutTerrain');
   //  console.log("tab laille "+tab.length)
   for(let i=0;i<tab.length;i++)
@@ -501,13 +500,13 @@ function ajoutToTerrain(carde){
   cardeAjoutTerrain.forEach(carte=>{
     
     carte.addEventListener('click',()=>{
-      
+      // carde.classList.remove('cardeAjoutTerrain')
       carde.classList.add('hidden') 
-  
+     
        carde.parentElement.appendChild(carte)
         formcarde.classList.add('hidden')
       
-      carte.addEventListener('click',()=>{
+        carde.addEventListener('click',()=>{
         formcarde.classList.remove('hidden')
         ajoutToTerrain(carte);
       })
@@ -530,51 +529,185 @@ positionPlayer.addEventListener('change',()=>{
     if(positionPlayer.value=="GK")
     {
         statistique.innerHTML=`
-        <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
+        
+        <div class="flex gap-2">
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for=""class="text-white">Diving</label>
+                <input id="Diving" type="text" placeholder="diving" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for=""class="text-white">handling</label>
+                <input id="handling" type="text" placeholder="handling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+       </div>
+        <div class="flex gap-2">
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">kicking</label>
+                <input id="kicking" type="text" placeholder="kicking" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">reflexes</label>
+                <input id="reflexes" type="text" placeholder="reflexes" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+       </div>
+        <div class="flex gap-2">
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">speed</label>
+                <input id="speed" type="text" placeholder="speed" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">positioning</label>
+                <input id="positioning" type="text" placeholder="positioning" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+       </div>
         `
     }else{
         statistique.innerHTML=
         `
-         <label for="" >rating</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >pace</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >shooting</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >passing</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >dribbling</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >defending</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
-        <label for="" >physical</label>
-        <input type="number" class="rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Player's note">
+        <div class="flex gap-2">
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">pace</label>
+                <input id="pace"type="text" placeholder="pace" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">shooting</label>
+                <input id="shooting" type="text" placeholder="shooting" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+       </div>
+        <div class="flex gap-2">
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for="" class="text-white">passing</label>
+                <input id="passing" type="text" placeholder="passing" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for=""class="text-white">dribbling</label>
+                <input id="dribbling" type="text" placeholder="dribbling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+       </div>
+        <div class="flex gap-2">
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for=""class="text-white">defending</label>
+                <input id="defending" type="text" placeholder="defending" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+            <div class="flex flex-col gap-1 w-1/2">
+                <label for=""class="text-white">physical</label>
+                <input id="physical" type="text" placeholder="physical" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+            </div>
+       </div>
         `  
     }
 })
 // fct add player
 function addPlayer()
 {
-   TousChampsRemplais()
+   let ratingGk=(document.querySelector('#Diving').value+document.querySelector('#handling').value+document.querySelector('#kicking').value+document.querySelector('#reflexes').value+document.querySelector('#speed').value+document.querySelector('#positioning').value)/6
+
+  //  TousChampsRemplais()
+  if(positionPlayer.value=="GK")
+    {
+      containerChangement.innerHTML+=`
+         <div class="flex justify-center">
+   <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+       <div class="flex flex-col ">
+           <div class="flex">
+               <div class=" top-[310px] flex flex-col mt-4">
+               <p class="">${ratingGk}</p>
+                <p>${positionPlayer.value}</p>
+             </div>
+           <img src="${imagPlayer.value}" class="h-[100px] w-24 relative">
+          </div>
+           <h6 class="text-center text-sm">${namePlayer.value}</h6>
+       </div>
+       <div class="flex justify-center gap-1">
+         <div class="flex flex-col">
+           <p class="text-[9px]">DIV</p>
+           <p class="text-[9px]">${document.querySelector('#Diving').value}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">HAN</p>
+           <p class="text-[9px]">${document.querySelector('#handling').value}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">KIC</p>
+           <p class="text-[9px]">${document.querySelector('#kicking').value}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">REF</p>
+           <p class="text-[9px]">${document.querySelector('#reflexes').value}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">SPE</p>
+           <p class="text-[9px]">${document.querySelector('#speed').value}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">POS</p>
+           <p class="text-[9px]">${document.querySelector('#positioning').value}</p>
+         </div>
+         </div>
+          <div class="flex gap-4">
+               <img src="${flag.value}" alt="" srcset="" class="w-4">
+               <img src="${clubLogo.value}" alt="" srcset="" class="w-4">
+           </div>
+             </div>
+</div>
+
+     `
+    }else{
+      containerChangement.innerHTML+=`
+        <div class="flex justify-center">
+   <div class="cardeAjoutTerrain  flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
+       <div class="flex flex-col">
+           <div class="flex">
+               <div class="top-[310px] flex flex-col mt-4">
+                   <p class=""></p>
+                   <p>${positionPlayer.value}</p>
+               </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
+               <img src="${imagPlayer.value}" class="h-[100px] w-24 relative">
+           </div>
+           <h6 class="text-center text-sm">${namePlayer.value}</h6>
+       </div>
+       
+       <div class="flex justify-center gap-2">
+           <div class="flex flex-col">
+               <p class="text-[9px]">PAC</p>
+               <p class="text-[9px]">${document.querySelector('#pace').value}</p>
+           </div>
+           <div class="flex flex-col">
+               <p class="text-[9px]">SHO</p>
+               <p class="text-[9px]">${document.querySelector('#shooting').value}</p>
+           </div>
+           <div class="flex flex-col">
+               <p class="text-[9px]">pas</p>
+               <p class="text-[9px]">${document.querySelector('#passing').value}</p>
+           </div>
+            <div class="flex flex-col">
+               <p class="text-[9px]">DRI</p>
+               <p class="text-[9px]">${document.querySelector('#dribbling').value}</p>
+           </div>
+           <div class="flex flex-col">
+               <p class="text-[9px]">DEF</p>
+               <p class="text-[9px]">${document.querySelector('#defending').value}</p>
+           </div>
+           <div class="flex flex-col">
+               <p class="text-[9px]">PHY</p>
+               <p class="text-[9px]">${document.querySelector('#physical').value}</p>
+           </div> 
+       </div>
+       <div class="flex gap-4">
+               <img src="${flag.value}" alt="" srcset="" class="w-4">
+               <img src="${clubLogo.value}" alt="" srcset="" class="w-4">
+           </div>
+   </div>
+</div>
+     `
+    }
+
    modaleAdd.classList.add('hidden')
    
 }
 
 function TousChampsRemplais(){
-  if(EstVide(namePlayer.value)||EstVide(imagPlayer.value)||EstVide(flag.value)||EstVide(clubLogo.value)||EstVide(positionPlayer.value)) 
+  if(EstVide(namePlayer.value)||EstVide(imagPlayer.value)||EstVide(flag.value)||EstVide(clubLogo.value)||EstVide(positionPlayer.value)|| EstVide()) 
   {
     alert("il faut remplaire Tous les champs");
   }else {
