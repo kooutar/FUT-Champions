@@ -7,7 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="flex justify-center h-[500px] items-center">
+    
+      
+    
+        <!-- Main modal -->
+        <div id="formcarde" data-modal-show="true" aria-hidden="true" class="overflow-x-hidden overflow-y-auto bg-black/50  fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+            <div class="relative w-full max-w-2xl px-4 h-full md:h-auto">
+                <!-- Modal content -->
+                <div class="bg-white rounded-lg box-shadow: 0px 10px 1px rgba(221, 221, 221, 1), 0 10px 20px rgba(204, 204, 204, 1); relative dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-5 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-gray-900 text-xl lg:text-2xl font-semibold dark:text-white">
+                            Terms of Service
+                        </h3>
+                        <button id="closeBteForListPlayers" type="button" class="closeBte text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="default-modal">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                   
+                    <div id="bgCarde"class="flex  bg-white p-8"></div>
+                </div>
+            </div>
+        </div>
+    
+        
+    <!-- <div class="flex justify-center h-[500px] items-center">
     <div class=" flex flex-col bg-cover bg-center bg-no-repeat w-4 lg:w-24 items-center pt-4  " style="background-image: url('images/badge_gold.png');">
         <div class="flex flex-col ">
             <div class="flex">
@@ -50,7 +75,7 @@
           <img src="images/club.png" alt="" srcset="" class="w-4">
         </div>
     </div>
-   </div>
+   </div> -->
    <!-- <div class="carte p-6 rounded-lg relative bg-cover bg-center" 
                             style="background-image: url('./src/assets/img/badge_gold.webp');">
                             <div class="flex text-black text-center mt-2">RW</div>

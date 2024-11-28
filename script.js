@@ -262,7 +262,7 @@ const flag=document.querySelector('#flag');
 const clubLogo=document.querySelector('#clubLogo');
 const statusPlayer=document.querySelector('#status');
 
-let tabPlayers=[];
+let tab=[];
 
 // fermeture de modal
 
@@ -284,7 +284,7 @@ carde.forEach((carde)=>{
       if(carde.id=="LST"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "ST")
+        tab=players.filter(players=> players.position == "ST")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -293,7 +293,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="GK"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        let tab=players.filter(players=> players.position == "GK")
+         tab=players.filter(players=> players.position == "GK")
         for(i=0;i<tab.length;i++)
         {
         styleCarde(bgCarde, tab[i],carde)
@@ -302,7 +302,7 @@ carde.forEach((carde)=>{
        } if(carde.id=="RST"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position =="ST")
+        tab=players.filter(players=> players.position =="ST")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -311,7 +311,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="RW"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "RW")
+        tab=players.filter(players=> players.position == "RW")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -320,7 +320,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="RCM"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "CM")
+        tab=players.filter(players=> players.position == "CM")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -329,7 +329,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="LCM"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "CM")
+        tab=players.filter(players=> players.position == "CM")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -338,7 +338,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="LW"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "LW")
+        tab=players.filter(players=> players.position == "LW")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -347,7 +347,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="RB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "RB")
+        tab=players.filter(players=> players.position == "RB")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -356,7 +356,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="RCB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "CB")
+        tab=players.filter(players=> players.position == "CB")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -365,7 +365,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="LCB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "CB")
+        tab=players.filter(players=> players.position == "CB")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -374,7 +374,7 @@ carde.forEach((carde)=>{
       }if(carde.id=="LB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-       let tab=players.filter(players=> players.position == "LB")
+        tab=players.filter(players=> players.position == "LB")
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
@@ -493,28 +493,36 @@ carde.forEach((carde)=>{
 // fct ajouter palyer a terrain
 function ajoutToTerrain(carde){
   const cardeAjoutTerrain=document.querySelectorAll('.cardeAjoutTerrain');
-  // console.log(cardeAjoutTerrain)
+  //  console.log("tab laille "+tab.length)
+  for(let i=0;i<tab.length;i++)
+  {
+    console.log(tab[i])
+  }
   cardeAjoutTerrain.forEach(carte=>{
-    let countClick=0;
-  
-    console.log(countClick);
+    
     carte.addEventListener('click',()=>{
-      carde.classList.add('hidden')
-          console.log(carte)
+      
+      carde.classList.add('hidden') 
   
        carde.parentElement.appendChild(carte)
         formcarde.classList.add('hidden')
-      countClick++
+      
       carte.addEventListener('click',()=>{
         formcarde.classList.remove('hidden')
-        ajoutToTerrain(carte)
+        ajoutToTerrain(carte);
       })
-
-      
     })
   })
 }
-
+// function reajouterAmodaldesplayers(carte,carde)
+// {
+//   formcarde.replaceChild(carte,carde)
+// }
+// supprimer player principale de tableau général des players
+function supprimerPlayerFromTablePlayers(indicePlayer)
+{
+  players=players.splice(indicePlayer,1);
+}
 
 
 // afficher les champs pour calculer statique selon position
@@ -560,18 +568,33 @@ positionPlayer.addEventListener('change',()=>{
 // fct add player
 function addPlayer()
 {
-    const player = {
-        name: namePlayer.value,
-        photo:imagPlayer.value,
-        position:positionPlayer.value,
-        flag:flag.value,
-        clubLogo:clubLogo.value,
-        statusPlayer:statusPlayer.value
-    };
-    tabPlayers.push(player)
-    window.localStorage.setItem("players",player)
+   TousChampsRemplais()
+   modaleAdd.classList.add('hidden')
+   
 }
 
+function TousChampsRemplais(){
+  if(EstVide(namePlayer.value)||EstVide(imagPlayer.value)||EstVide(flag.value)||EstVide(clubLogo.value)||EstVide(positionPlayer.value)) 
+  {
+    alert("il faut remplaire Tous les champs");
+  }else {
+    if(positionPlayer.value=="GK")
+    {
+      
+    }
+   }
+}
 
+function EstVide(inputeValue)
+{
+  if(inputeValue.trim() == '' )
+   {
+    console.log(' conteit des espaces')
+    return true
+   }
+   else{
+    console.log(' ne contient pas des espace au debut ou fin')
+   }
+}
 
 
