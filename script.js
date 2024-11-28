@@ -411,8 +411,8 @@ carde.forEach((carde)=>{
     <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4  " style="background-image: url('images/badge_gold.png');">
         <div class="flex flex-col ">
             <div class="flex">
-                <div class="absolute top-[310px] flex flex-col">
-                <p class="mb-[-10px]">${player.rating}</p>
+                <div class=" top-[310px] flex flex-col mt-4">
+                <p class="">${player.rating}</p>
                  <p>${player.position}</p>
               </div>
             <img src="${player.photo}" class="h-[100px] w-24 relative">
@@ -444,16 +444,23 @@ carde.forEach((carde)=>{
             <p class="text-[9px]">POS</p>
             <p class="text-[9px]">${player.positioning}</p>
           </div>
-          </div 
+          </div>
+           <div class="flex gap-4">
+                <img src="${player.flag}" alt="" srcset="" class="w-4">
+                <img src="${player.logo}" alt="" srcset="" class="w-4">
+            </div>
+              </div>
+</div>
+
       `
      }else{
       parentDiv.innerHTML+=`
          <div class="flex justify-center">
-    <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4" style="background-image: url('images/badge_gold.png');">
+    <div class="cardeAjoutTerrain  flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[200px] items-center pt-4 " style="background-image: url('images/badge_gold.png');">
         <div class="flex flex-col">
             <div class="flex">
-                <div class="absolute top-[310px] flex flex-col">
-                    <p class="mb-[-10px]">${player.rating}</p>
+                <div class="top-[310px] flex flex-col mt-4">
+                    <p class="">${player.rating}</p>
                     <p>${player.position}</p>
                 </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
                 <img src="${player.photo}" class="h-[100px] w-24 relative">
@@ -500,21 +507,32 @@ carde.forEach((carde)=>{
     addCriteriaPlayer(divContainer,player.position,player,carde)
   }
 // fct ajouter Player a terrain
-function addPlayerToTerrain(cardePlayer ,idCarde)
-{
-   const baliseImgeCarde=document.getElementById(idCarde);
-   baliseImgeCarde.classList.add("hidden");
+// function addPlayerToTerrain(cardePlayer ,idCarde)
+// {
+//    const baliseImgeCarde=document.getElementById(idCarde);
+//    baliseImgeCarde.classList.add("hidden");
    
-}
+// }
 // fct ajouter palyer a terrain
 function ajoutToTerrain(carde){
   const cardeAjoutTerrain=document.querySelectorAll('.cardeAjoutTerrain');
+  let countClick=0;
   // console.log(cardeAjoutTerrain)
   cardeAjoutTerrain.forEach(carte=>{
+    let countClick=0;
+    console.log(countClick);
     carte.addEventListener('click',()=>{
-      carde.classList.add('hidden')
-     carde.parentElement.appendChild(carte)
-      formcarde.classList.add('hidden')
+      countClick++
+      if(countClick%2!=0){
+        console.log("premier click");
+        carde.classList.add('hidden')
+        carde.parentElement.appendChild(carte)
+         formcarde.classList.add('hidden')
+      }
+      else{console.log("deuxième click")
+        confirm("vous voulez changer la postion de ce player ")
+      }
+     
     })
   })
 }
