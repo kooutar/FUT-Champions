@@ -33,7 +33,7 @@
             <div class="flex gap-2">
                 <div class="flex flex-col gap-1 w-1/2">
                     <label for="" class="text-white">country</label>
-                    <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                    <input id="nationality" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
                 </div>
                 <div class="flex flex-col gap-1 w-1/2">
                     <label for="" class="text-white">flag</label>
@@ -42,8 +42,8 @@
            </div>
            <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
-                <label for="" class="text-white">country</label>
-                <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <label for="" class="text-white">club name</label>
+                <input  id="club"type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">club</label>
@@ -95,7 +95,7 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <div id="bgCarde" class="grid grid-cols-2 bg-white p-8"></div>
+            <div id="bgCarde" class="grid grid-cols-2 bg-white p-8 gap-2 md:grid-cols-4 "></div>
         </div>
     </div>
 </div>
@@ -117,20 +117,20 @@
                     </div>
                     <div class=" pb-12 flex flex-col" >
                     <div class="flex justify-center gap-12 mt-16" id="millieu">
-                       <div> <img src="images/gold84.png" id="RW" class="carde w-4  lg:w-24" data-position="0"></div>
-                        <div><img src="images/gold84.png" id="RCM" class="carde w-4 lg:w-24" data-position="1"></div>
-                       <div> <img src="images/gold84.png" id="LCM" class="carde w-4 lg:w-24" data-position="2"></div>
-                        <div><img src="images/gold84.png" id="LW" class="carde w-4 lg:w-24" data-position="3"></div>
+                       <div class="cursor-pointer"> <img src="images/gold84.png" id="RW" class="carde w-4  lg:w-24" data-position="0"></div>
+                        <div class="cursor-pointer"><img src="images/gold84.png" id="RCM" class="carde w-4 lg:w-24" data-position="1"></div>
+                       <div class=""> <img src="images/gold84.png" id="LCM" class="carde w-4 lg:w-24" data-position="2"></div>
+                        <div class="cursor-pointer"><img src="images/gold84.png" id="LW" class="carde w-4 lg:w-24" data-position="3"></div>
                 </div>
                   
                     <div class="flex justify-center gap-[8vw] mt-[100px]" id="defance">
-                            <div><img src="images/gold84.png" id="RB" class="carde w-4 lg:w-24" data-position="0"></div>
-                            <div><img src="images/gold84.png" id="RCB" class="carde w-4 lg:w-24" data-position="1"></div>
-                            <div><img src="images/gold84.png" id="LCB" class="carde w-4 lg:w-24" date-position="3"></div>
-                            <div><img src="images/gold84.png" id="LB" alt="" class="carde w-4 lg:w-24" data-position="4"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="RB" class="carde w-4 lg:w-24" data-position="0"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="RCB" class="carde w-4 lg:w-24" data-position="1"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="LCB" class="carde w-4 lg:w-24" date-position="3"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="LB" alt="" class="carde w-4 lg:w-24" data-position="4"></div>
                     </div>
                 </div>
-                    <div class="flex justify-center" id="gool">
+                    <div class="flex justify-center cursor-pointer" id="gool">
                             <img src="images/gold84.png" id="GK" alt="" class="carde w-4 lg:w-24" data-position="0">
                     </div>
                 </div>
@@ -140,15 +140,16 @@
              <div class="flex justify-end w-full ">
                 <button id="bteOuvrireModalAjout" class="h-8 p-2 bg-[#03346E] text-white rounded-lg">add player</button>
              </div>
-             <div class="flex justify-center w-full">
-             <div id="containerChangement"class="grid grid-cols-4 w-full   ">
-               
-             </div>
-             
-            </div>
+           
             
             </div>
         </div>
+        <div class="flex justify-center w-full bg-gray-900 p-4">
+            <div id="containerChangement"class="grid grid-cols-2 w-full md:grid-cols-4 lg:grid-cols-8">
+              
+            </div>
+            
+           </div>
         <footer class="bg-[#03346E] lg:flex gap-4">
             <div class="flex flex-col p-4">
              <img src="images/logo.png" alt="logo" class="w-24">

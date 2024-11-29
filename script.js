@@ -238,7 +238,183 @@ let players = [
       dribbling: 83,
       defending: 36,
       physical: 91
-    }
+    },
+    {
+      name: "N'Golo Kanté",
+      photo: "https://cdn.sofifa.net/players/215/914/25_120.png",
+      position: "CM",
+      nationality: "France",
+      flag: "https://cdn.sofifa.net/flags/fr.png",
+      club: "Al-Ittihad",
+      logo: "https://cdn.sofifa.net/meta/team/476/120.png",
+      rating: 87,
+      pace: 77,
+      shooting: 66,
+      passing: 75,
+      dribbling: 82,
+      defending: 88,
+      physical: 82,
+    },
+    {
+      name: "Alphonso Davies",
+    photo: "https://cdn.sofifa.net/players/234/396/25_120.png",
+    position: "LB",
+    nationality: "Canada",
+    flag: "https://cdn.sofifa.net/flags/ca.png",
+    club: "Bayern Munich",
+    logo: "https://cdn.sofifa.net/meta/team/503/120.png",
+    rating: 84,
+    pace: 96,
+    shooting: 68,
+    passing: 77,
+    dribbling: 82,
+    defending: 76,
+    physical: 77,
+    },
+    {
+      name: "Yassine Bounou",
+      photo: "https://cdn.sofifa.net/players/209/981/25_120.png",
+      position: "GK",
+      nationality: "Morocco",
+      flag: "https://cdn.sofifa.net/flags/ma.png",
+      club: "Al-Hilal",
+      logo: "https://cdn.sofifa.net/meta/team/7011/120.png",
+      rating: 84,
+      diving: 81,
+      handling: 82,
+      kicking: 77,
+      reflexes: 86,
+      speed: 38,
+      positioning: 83,
+    },
+    {
+      name: "Bruno Fernandes",
+    photo: "https://cdn.sofifa.net/players/212/198/25_120.png",
+    position: "CM",
+    nationality: "Portugal",
+    flag: "https://cdn.sofifa.net/flags/pt.png",
+    club: "Manchester United",
+    logo: "https://cdn.sofifa.net/meta/team/14/120.png",
+    rating: 88,
+    pace: 75,
+    shooting: 85,
+    passing: 89,
+    dribbling: 84,
+    defending: 69,
+    physical: 77,
+    },
+    {
+      name: "Jadon Sancho",
+      photo: "https://cdn.sofifa.net/players/233/049/25_120.png",
+      position: "LW",
+      nationality: "England",
+      flag: "https://cdn.sofifa.net/flags/gb-eng.png",
+      club: "Manchester United",
+      logo: "https://cdn.sofifa.net/meta/team/14/120.png",
+      rating: 84,
+      pace: 85,
+      shooting: 74,
+      passing: 78,
+      dribbling: 88,
+      defending: 34,
+      physical: 63,
+    },
+    {
+      name: "Alexander-Arnold",
+      photo: "https://cdn.sofifa.net/players/231/281/25_120.png",
+      position: "RB",
+      nationality: "England",
+      flag: "https://cdn.sofifa.net/flags/gb-eng.png",
+      club: "Liverpool",
+      rating: 87,
+      pace: 76,
+      shooting: 66,
+      passing: 89,
+      dribbling: 80,
+      defending: 79,
+      physical: 71,
+    },
+    {
+      name: "Achraf Hakimi",
+      photo: "https://cdn.sofifa.net/players/235/212/25_120.png",
+      position: "RB",
+      nationality: "Morocco",
+      flag: "https://cdn.sofifa.net/flags/ma.png",
+      club: "Paris Saint-Germain",
+      logo: "https://cdn.sofifa.net/meta/team/591/120.png",
+      rating: 84,
+      pace: 91,
+      shooting: 76,
+      passing: 80,
+      dribbling: 80,
+      defending: 75,
+      physical: 78,
+    },
+    {
+      name: "Youssef En-Nesyri",
+      photo: "https://cdn.sofifa.net/players/235/410/25_120.png",
+      position: "ST",
+      nationality: "Morocco",
+      flag: "https://cdn.sofifa.net/flags/ma.png",
+      club: "Fenerbahçe",
+      logo: "https://cdn.sofifa.net/meta/team/88/120.png",
+      rating: 83,
+      pace: 82,
+      shooting: 82,
+      passing: 63,
+      dribbling: 77,
+      defending: 36,
+      physical: 80,
+    },
+    {
+      name: "Noussair Mazraoui",
+      photo: "https://cdn.sofifa.net/players/236/401/25_120.png",
+      position: "LB",
+      nationality: "Morocco",
+      flag: "https://cdn.sofifa.net/flags/ma.png",
+      club: "Manchester United",
+      logo: "https://cdn.sofifa.net/meta/team/14/120.png",
+      rating: 81,
+      pace: 78,
+      shooting: 66,
+      passing: 77,
+      dribbling: 83,
+      defending: 77,
+      physical: 71,
+    },
+    {
+      name: "Ismael Saibari",
+      photo: "https://cdn.sofifa.net/players/259/480/25_120.png",
+      position: "CM",
+      nationality: "Morocco",
+      flag: "https://cdn.sofifa.net/flags/ma.png",
+      club: "PSV",
+      logo: "https://cdn.sofifa.net/meta/team/682/120.png",
+      rating: 83,
+      pace: 89,
+      shooting: 78,
+      passing: 80,
+      dribbling: 86,
+      defending: 55,
+      physical: 84,
+    },
+    {
+      name: "Gianluigi Donaruma",
+      photo: "https://cdn.sofifa.net/players/230/621/25_120.png",
+      position: "GK",
+      nationality: "Italy",
+      flag: "https://cdn.sofifa.net/flags/it.png",
+      club: "Paris Saint-Germain",
+      logo: "https://cdn.sofifa.net/meta/team/591/120.png",
+      rating: 89,
+      diving: 88,
+      handling: 84,
+      kicking: 75,
+      reflexes: 90,
+      speed: 50,
+      positioning: 85,
+    },
+    
   ];
 
 
@@ -266,7 +442,7 @@ const statusPlayer=document.querySelector('#status');
 // *************************************************
 const containerChangement=document.querySelector('#containerChangement')
 let tab=[];
-
+let arrayListePrincipale=[]
 // fermeture de modal
 
 // ouverture de modal
@@ -291,6 +467,7 @@ carde.forEach((carde)=>{
        for(i=0;i<tab.length;i++)
        {
         styleCarde(bgCarde, tab[i],carde)
+       
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="GK"){
@@ -394,8 +571,8 @@ carde.forEach((carde)=>{
     if(player.position=="GK")
       {
        parentDiv.innerHTML+=`
-           <div class="flex justify-center">
-     <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+           <div class="cardeajout flex justify-center" id="${player.name}">
+     <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
          <div class="flex flex-col ">
              <div class="flex">
                  <div class=" top-[310px] flex flex-col mt-4">
@@ -442,8 +619,8 @@ carde.forEach((carde)=>{
        `
       }else{
        parentDiv.innerHTML+=`
-          <div class="flex justify-center">
-     <div class="cardeAjoutTerrain  flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
+          <div class="cardeajout flex justify-center" id="${player.name}">
+     <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
          <div class="flex flex-col">
              <div class="flex">
                  <div class="top-[310px] flex flex-col mt-4">
@@ -490,38 +667,22 @@ carde.forEach((carde)=>{
 
 // fct ajouter palyer a terrain
 function ajoutToTerrain(carde){
-  let nbrClick=0;
-  const cardeAjoutTerrain=document.querySelectorAll('.cardeAjoutTerrain');
-  //  console.log("tab laille "+tab.length)
-  for(let i=0;i<tab.length;i++)
-  {
-    console.log(tab[i])
-  }
+
+  const cardeAjoutTerrain=document.querySelectorAll('.cardeajout');
   cardeAjoutTerrain.forEach(carte=>{
-    
     carte.addEventListener('click',()=>{
-      // carde.classList.remove('cardeAjoutTerrain')
+      carte.classList.remove('cardeAjoutTerrain')
       carde.classList.add('hidden') 
-     
        carde.parentElement.appendChild(carte)
         formcarde.classList.add('hidden')
-      
-        carde.addEventListener('click',()=>{
+        carte.addEventListener('click',()=>{
         formcarde.classList.remove('hidden')
         ajoutToTerrain(carte);
       })
     })
   })
 }
-// function reajouterAmodaldesplayers(carte,carde)
-// {
-//   formcarde.replaceChild(carte,carde)
-// }
-// supprimer player principale de tableau général des players
-function supprimerPlayerFromTablePlayers(indicePlayer)
-{
-  players=players.splice(indicePlayer,1);
-}
+
 
 
 // afficher les champs pour calculer statique selon position
@@ -598,16 +759,120 @@ positionPlayer.addEventListener('change',()=>{
     }
 })
 // fct add player
-function addPlayer()
-{
-   let ratingGk=(document.querySelector('#Diving').value+document.querySelector('#handling').value+document.querySelector('#kicking').value+document.querySelector('#reflexes').value+document.querySelector('#speed').value+document.querySelector('#positioning').value)/6
 
-  //  TousChampsRemplais()
+  
+  players.forEach(player => {
+    showPlayer(player)
+    
+  });
+
+function showPlayer(player){
+  if(player.position=='GK'){
+  containerChangement.innerHTML+=`
+         <div class="flex justify-center" id="${player.name}">
+   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+       <div class="flex flex-col ">
+           <div class="flex">
+               <div class=" top-[310px] flex flex-col mt-4">
+               <p class="">${player.rating}</p>
+                <p>${player.position}</p>
+             </div>
+           <img src="${player.photo}" class="h-[100px] w-24 relative">
+          </div>
+           <h6 class="text-center text-sm">${player.name}</h6>
+       </div>
+       <div class="flex justify-center gap-1">
+         <div class="flex flex-col">
+           <p class="text-[9px]">DIV</p>
+           <p class="text-[9px]">${player.diving}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">HAN</p>
+           <p class="text-[9px]">${player.handling}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">KIC</p>
+           <p class="text-[9px]">${player.kicking}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">REF</p>
+           <p class="text-[9px]">${player.reflexes}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">SPE</p>
+           <p class="text-[9px]">${player.speed}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">POS</p>
+           <p class="text-[9px]">${player.positioning}</p>
+         </div>
+         </div>
+          <div class="flex gap-4">
+               <img src="${player.flag}" alt="" srcset="" class="w-4">
+               <img src="${player.logo}" alt="" srcset="" class="w-4">
+           </div>
+             </div>
+</div>
+
+     `
+    }else{
+      
+      containerChangement.innerHTML+=`
+       <div class="flex justify-center" id="${player.name}">
+   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+       <div class="flex flex-col ">
+           <div class="flex">
+               <div class=" top-[310px] flex flex-col mt-4">
+               <p class="">${player.rating}</p>
+                <p>${player.position}</p>
+             </div>
+           <img src="${player.photo}" class="h-[100px] w-24 relative">
+          </div>
+           <h6 class="text-center text-sm">${player.name}</h6>
+       </div>
+       <div class="flex justify-center gap-1">
+         <div class="flex flex-col">
+           <p class="text-[9px]">PAC</p>
+           <p class="text-[9px]">${player.pace}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">SHO</p>
+           <p class="text-[9px]">${player.passing}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">KIC</p>
+           <p class="text-[9px]">${player.dribbling}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">REF</p>
+           <p class="text-[9px]">${player.defending}</p>
+         </div>
+         <div class="flex flex-col">
+           <p class="text-[9px]">SPE</p>
+           <p class="text-[9px]">${player.physical}</p>
+         </div>
+         
+         </div>
+          <div class="flex gap-4">
+               <img src="${player.flag}" alt="" srcset="" class="w-4">
+               <img src="${player.logo}" alt="" srcset="" class="w-4">
+           </div>
+             </div>
+</div>
+     `
+    }
+  }
+
+function  addPlayer()
+{
   if(positionPlayer.value=="GK")
     {
+      
+      let ratingGk=(parseInt(document.querySelector('#Diving').value)+parseInt(document.querySelector('#handling').value)+parseInt(document.querySelector('#kicking').value)+parseInt(document.querySelector('#reflexes').value)+parseInt(document.querySelector('#speed').value)+parseInt(document.querySelector('#positioning').value))/6
+      createObjetPayerGK(ratingGk,document.querySelector('#Diving').value,document.querySelector('#handling').value,document.querySelector('#kicking').value,document.querySelector('#reflexes').value,document.querySelector('#speed').value,document.querySelector('#positioning').value)
       containerChangement.innerHTML+=`
          <div class="flex justify-center">
-   <div class="cardeAjoutTerrain flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col ">
            <div class="flex">
                <div class=" top-[310px] flex flex-col mt-4">
@@ -653,13 +918,15 @@ function addPlayer()
 
      `
     }else{
+      let ratingNonGk=(parseInt(document.querySelector('#pace').value)+parseInt(document.querySelector('#shooting').value)+parseInt(document.querySelector('#passing').value)+parseInt(document.querySelector('#dribbling').value)+parseInt(document.querySelector('#defending').value)+parseInt(document.querySelector('#physical').value))/6
+      createObjetPayer(ratingNonGk,document.querySelector('#pace').value,document.querySelector('#shooting').value,document.querySelector('#passing').value,document.querySelector('#dribbling').value,document.querySelector('#defending').value,document.querySelector('#physical').value)
       containerChangement.innerHTML+=`
         <div class="flex justify-center">
-   <div class="cardeAjoutTerrain  flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
+   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col">
            <div class="flex">
                <div class="top-[310px] flex flex-col mt-4">
-                   <p class=""></p>
+                   <p class="">${ratingNonGk}</p>
                    <p>${positionPlayer.value}</p>
                </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
                <img src="${imagPlayer.value}" class="h-[100px] w-24 relative">
@@ -703,7 +970,47 @@ function addPlayer()
     }
 
    modaleAdd.classList.add('hidden')
-   
+}
+
+function createObjetPayerGK(ratingGk,diving,handling,kicking,kicking,reflexes,speed,positioning)
+{
+ const  newPlayer={
+     name:namePlayer.value,
+     photo:imagPlayer.value,
+     position:positionPlayer.value,
+     nationality:document.querySelector('#nationality').value,
+     flag:flag.value,
+     club:document.querySelector('#club').value,
+     logo:clubLogo.value,
+     rating:ratingGk,
+     diving:parseInt(diving),
+     handling:parseInt(handling),
+     kicking:parseInt(kicking),
+     reflexes:parseInt(reflexes),
+     speed:parseInt(speed),
+     positioning:parseInt(positioning),
+ }
+ players.push(newPlayer)
+}
+function createObjetPayer(rating,diving,handling,kicking,kicking,reflexes,speed,positioning)
+{
+ const  newPlayer={
+     name:namePlayer.value,
+     photo:imagPlayer.value,
+     position:positionPlayer.value,
+     nationality:document.querySelector('#nationality').value,
+     flag:flag.value,
+     club:document.querySelector('#club').value,
+     logo:clubLogo.value,
+     rating:rating,
+     pace:parseInt(diving),
+     shooting:parseInt(handling),
+     passing:parseInt(kicking),
+     dribbling:parseInt(reflexes),
+     defending:parseInt(speed),
+     physical:parseInt(positioning),
+ }
+ players.push(newPlayer)
 }
 
 function TousChampsRemplais(){
@@ -730,4 +1037,32 @@ function EstVide(inputeValue)
    }
 }
 
+Array.from(containerChangement.children).forEach(playerChngement => {
+  playerChngement.addEventListener('click', () => {
+    console.log(playerChngement)
+    removeplayer(playerChngement)
+  });
+});
+
+
+function removeplayer(playerChngement) {
+ 
+  const playerName = playerChngement.id;
+  console.log(playerName)
+  
+  const playerIndex = players.findIndex(player => player.name == playerName);
+    console.log(playerIndex)
+  if (playerIndex !== -1) {
+   
+    players.splice(playerIndex, 1);
+
+    // Retirer l'élément de la DOM
+    playerChngement.remove();
+
+    console.log(`Player "${playerName}" removed.`);
+    console.log("Remaining players:", players);
+  } else {
+    console.error(`Player "${playerName}" not found in the list.`);
+  }
+}
 
