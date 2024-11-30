@@ -6,186 +6,77 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
+<body class="flex justify-center">
     
       
-    
-        <!-- Main modal -->
-        <div class="cardeajout" >
-          <div class=" flex justify-center" id="${player.name}">
-     <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
-         <div class="flex flex-col">
-             <div class="flex">
-                 <div class="top-[310px] flex flex-col mt-4">
-                     <p class="">${player.rating}</p>
-                     <p>${player.position}</p>
-                 </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
-                 <img src="${player.photo}" class="h-[100px] w-24 relative">
-             </div>
-             <h6 class="text-center text-sm">${player.name}</h6>
-         </div>
-         
-         <div class="flex justify-center gap-2">
-             <div class="flex flex-col">
-                 <p class="text-[9px]">PAC</p>
-                 <p class="text-[9px]">${player.pace}</p>
-             </div>
-             <div class="flex flex-col">
-                 <p class="text-[9px]">SHO</p>
-                 <p class="text-[9px]">${player.shooting}</p>
-             </div>
-             <div class="flex flex-col">
-                 <p class="text-[9px]">DRI</p>
-                 <p class="text-[9px]">${player.dribbling}</p>
-             </div>
-             <div class="flex flex-col">
-                 <p class="text-[9px]">DEF</p>
-                 <p class="text-[9px]">${player.defending}</p>
-             </div>
-             <div class="flex flex-col">
-                 <p class="text-[9px]">PHY</p>
-                 <p class="text-[9px]">${player.physical}</p>
-             </div> 
-         </div>
-         <div class="flex gap-4">
-                 <img src="${player.flag}" alt="" srcset="" class="w-4">
-                 <img src="${player.logo}" alt="" srcset="" class="w-4">
-             </div>
-     </div>
- </div>
- <img src="images/flat-icon-of-cyclic-rotation-recycling-recurrence-renewal-free-vector-removebg-preview.png" alt="" srcset="" class="w-8">
- </div>
-            
-            
-                <!-- <div id="modalAjout" class=" flex justify-center items-center  fixed inset-0 bg-black/50 z-50 hidden ">
-                    <div class=" w-full md:w-1/2 bg-gray-900 p-4 rounded-lg text-white">
-                        <div class="flex justify-between ">
-                            <img src="images/logo.png" alt="" class="w-16">
-                            <button id="closeBte" class="closeBte text-[25px]">&times;</button>
+    <!-- <div class="carde w-24 h-32  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div> -->
+    <div class="bg-cover bg-center bg-no-repeat md:h-[800px] " style="background-image: url('images/terrain.jpeg');">
+        <div class="container-carde flex flex-col ">
+            <div class="flex justify-center gap-12" id="attack">
+                <div class="carde flex flex-col  w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')">
+                    <div class="flex justify-center pt-2 ">
+                        <div>
+                            <p class="text-[10px]">50</p>
+                            <p class="text-[10px]">LW</p>
                         </div>
-                        <div class="w-full h-1 bg-gray-500"></div>
-                         <form action="" class="flex flex-col gap-2">
-                            <div class="flex flex-col gap-1">
-                                <label for="">Nom Player</label>
-                                <input  id="namePlayer" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <label for="">photo Player</label>
-                                <input  id="imagPlayer" type="text" placeholder="photo player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
-                            </div>
-                           <div class="flex flex-col gap-1">
-                                <label for="">Nom Player</label>
-                                <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
-                            </div> -->
-                            <!-- <div class="flex gap-2">
-                                <div class="flex flex-col gap-1 w-1/2">
-                                    <label for="">country</label>
-                                    <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
-                                </div>
-                                <div class="flex flex-col gap-1 w-1/2">
-                                    <label for="">flag</label>
-                                    <input id="flag" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
-                                </div>
-                           </div>
-                           <div class="flex gap-2">
-                            <div class="flex flex-col gap-1 w-1/2">
-                                <label for="">country</label>
-                                <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
-                            </div>
-                            <div class="flex flex-col gap-1 w-1/2">
-                                <label for="">club</label>
-                                <input id="clubLogo" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
-                            </div>
-                       </div>
-                       <div class="flex flex-col gap-2 ">
-                        <label for="" >position</label>
-                       <select name="" id="positionPlayer" class="rounded-lg p-2 border-2 text-black focus:outline-none focus:border-blue-500 hover:border-blue-300">
-                        <option value="" disabled selected>-- Sélectionnez une option --</option>
-                        <option value="GK">GK</option>
-                        <option value="LB">LB</option>
-                        <option value="CB1">CB1</option>
-                        <option value="CB2">CB2</option>
-                        <option value="RB">RB</option>
-                        <option value="CML">CML</option>
-                        <option value="CM">CM</option>
-                        <option value="CMR">CMR</option>
-                        <option value="LW">LW</option>
-                        <option value="ST">ST</option>
-                        <option value="RW">RW</option>
-                       </select>
-                    </div>
-                    <div id="statistique" class="flex flex-col gap-2">
-                 
-                    </div>
-                    <button type="button" id="bteAddPlayer" onclick="addPlayer()" class="bg-gray-400 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300">
-                        Add Player
-                      </button>
-                      
-                         </form>
-                    </div>
+                        <img src="images/messi.jpg" alt="" srcset="" class="w-8">
+                     
+                        </div>
+                        <p class="text-center text-[10px]">messi</p>
+                    <div class="flex justify-center gap-1">
+                        <div class="flex flex-col">
+                            <p class="text-[2px]">CHOT</p>
+                            <p class="text-[5px]">50</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-[2px]">CHOT</p>
+                            <p class="text-[5px]">50</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-[2px]">CHOT</p>
+                            <p class="text-[5px]">50</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-[2px]">CHOT</p>
+                            <p class="text-[5px]">50</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-[2px]">CHOT</p>
+                            <p class="text-[5px]">50</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-[2px]">CHOT</p>
+                            <p class="text-[5px]">50</p>
+                        </div>
                 </div>
-                </div> --> 
-            
-    
-        
-    <!-- <div class="flex justify-center h-[500px] items-center">
-    <div class=" flex flex-col bg-cover bg-center bg-no-repeat w-4 lg:w-24 items-center pt-4  " style="background-image: url('images/badge_gold.png');">
-        <div class="flex flex-col ">
-            <div class="flex">
-                <div class="absolute top-[-2px] flex flex-col">
-                <p class="mb-[-10px]">90</p>
-                 <p>CF</p>
-              </div>
-            <img src="images/messi.jpg" class=" w-8 relative">
-           </div>
-            <h6 class="text-center text-[11px]">Messi</h6>
+                <div class="flex justify-center gap-2">
+                    <img src="images/messi.jpg" alt="" class="w-4">
+                    <img src="images/messi.jpg" alt="" class="w-4">
+                </div>
+                    </div>
+                    
+                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+            </div>
+            <div class=" pb-12 flex flex-col" >
+                <div class="flex justify-center gap-[8vw] mt-[100px]" id="defance">
+                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                </div>
+          
+            <div class="flex justify-center gap-[8vw] mt-[100px]" id="defance">
+                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+            </div>
         </div>
-        <div class="flex justify-center gap-1 ">
-          <div class="flex flex-col">
-            <p class="text-[9px]">Pas</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">Pas</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">Pas</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">Pas</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">Pas</p>
-            <p class="text-[9px]">50</p>
-          </div>
-          <div class="flex flex-col">
-            <p class="text-[9px]">Pas</p>
-            <p class="text-[9px]">50</p>
-          </div>
-        </div>
-        <div class=" flex gap-4">
-          <img src="images/flag.png" alt="" srcset="" class="w-4">
-          <img src="images/club.png" alt="" srcset="" class="w-4">
+            <div class="flex justify-center cursor-pointer" id="gool">
+                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+            </div>
         </div>
     </div>
-   </div> -->
-   <!-- <div class="carte p-6 rounded-lg relative bg-cover bg-center" 
-                            style="background-image: url('./src/assets/img/badge_gold.webp');">
-                            <div class="flex text-black text-center mt-2">RW</div>
-
-                            <div class="flex justify-center items-center">
-                                <img src="https://cdn.sofifa.net/players/212/622/25_120.png" alt="Sub Player"
-                                    class="h-16 w-16 object-contain">
-                            </div>
-                            <div class="flex justify-center items-center mt-2">
-                                <img src="https://cdn.sofifa.net/flags/br.png" alt="Brazil Flag" class="w-6 h-4 mx-1" />
-                                <img src="https://cdn.sofifa.net/meta/team/7011/120.png" alt="Al-Hilal Logo"
-                                    class="w-6 h-6 mx-1" />
-                            </div>
-                        </div>
-</div> -->
+       
 </body>
 </html>
