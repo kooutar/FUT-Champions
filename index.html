@@ -87,11 +87,11 @@
         <div class="bg-white rounded-lg shadow  ">
             <!-- Modal header -->
             <div class="flex items-start justify-between p-5 border-b rounded-t ">
-                <h3 class="text-gray-900 text-xl lg:text-2xl font-semibold dark:text-white">
+                <h3 class="text-gray-900 text-xl lg:text-2xl font-semibold ">
                    Chose  Players
                 </h3>
-                <button id="closeBteForListPlayers" type="button" class="closeBte text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center ">
-                    <svg class="w-5 h-5"   xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                <button id="closeBteForListPlayers" type="button" class="closeBte text-gray-400  hover:bg-gray-200  rounded-lg p-5  ">
+                    &times;
                 </button>
             </div>
             <!-- Modal body -->
@@ -102,6 +102,20 @@
 
 
 <!--  -->
+<!-- modale supprussion -->
+<div id="modaleremove" class="hidden bg-black/50 fixed inset-0 z-50 flex justify-center items-center">
+    <div class=" w-full max-w-2xl px-4 h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="bg-white rounded-lg shadow p-4 flex flex-col gap-6 items-center ">
+            <p class="font-semibold"> Vous voulez vrement supprimer ce players</p>
+            <div>
+                <button id="bteNonModalSupprission" class="font-semibold  hover:bg-gray-200  rounded-lg p-5 ">non</button>
+                <button id="bteOuiModalSupprission" class="font-semibold hover:bg-gray-200  rounded-lg p-5 ">oui</button>
+            </div>
+        </div>
+    </div>
+</div>
+ <!--  -->
 
         <header>
             <nav>
@@ -109,37 +123,52 @@
             </nav>
         </header>
         <div class="flex flex-col mb-2 gap-8 pl-12 pr-12 lg:flex-row">
-            <div class="bg-cover bg-center bg-no-repeat  " style="background-image: url('images/terrain.jpeg');">
+            <div class="bg-cover bg-center bg-no-repeat md:h-[800px] " style="background-image: url('images/terrain.jpeg');">
                 <div class="container-carde flex flex-col ">
                     <div class="flex justify-center gap-12" id="attack">
-                            <div><img src="images/gold84.png" id="RST" class="carde w-4  lg:w-24" data-position="0"></div>
-                            <div><img src="images/gold84.png" id="LST" class="carde w-4 lg:w-24" date-position="1"></div>
+                            <div class="cursor-pointer" ><img src="images/gold84.png" id="RST" class="carde w-4  md:w-16 lg:w-24" data-position="0"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="LST" class="carde w-4 md:w-16 lg:w-24" date-position="1"></div>
                     </div>
                     <div class=" pb-12 flex flex-col" >
                     <div class="flex justify-center gap-12 mt-16" id="millieu">
-                       <div class="cursor-pointer"> <img src="images/gold84.png" id="RW" class="carde w-4  lg:w-24" data-position="0"></div>
-                        <div class="cursor-pointer"><img src="images/gold84.png" id="RCM" class="carde w-4 lg:w-24" data-position="1"></div>
-                       <div class=""> <img src="images/gold84.png" id="LCM" class="carde w-4 lg:w-24" data-position="2"></div>
-                        <div class="cursor-pointer"><img src="images/gold84.png" id="LW" class="carde w-4 lg:w-24" data-position="3"></div>
+                       <div class="cursor-pointer"> <img src="images/gold84.png" id="RW" class="carde w-4 md:w-16 lg:w-24" data-position="0"></div>
+                        <div class="cursor-pointer"><img src="images/gold84.png" id="RCM" class="carde w-4 md:w-16 lg:w-24" data-position="1"></div>
+                       <div class="cursor-pointer"> <img src="images/gold84.png" id="LCM" class="carde w-4 md:w-16 lg:w-24" data-position="2"></div>
+                        <div class="cursor-pointer"><img src="images/gold84.png" id="LW" class="carde w-4 md:w-16 lg:w-24" data-position="3"></div>
                 </div>
                   
                     <div class="flex justify-center gap-[8vw] mt-[100px]" id="defance">
-                            <div class="cursor-pointer"><img src="images/gold84.png" id="RB" class="carde w-4 lg:w-24" data-position="0"></div>
-                            <div class="cursor-pointer"><img src="images/gold84.png" id="RCB" class="carde w-4 lg:w-24" data-position="1"></div>
-                            <div class="cursor-pointer"><img src="images/gold84.png" id="LCB" class="carde w-4 lg:w-24" date-position="3"></div>
-                            <div class="cursor-pointer"><img src="images/gold84.png" id="LB" alt="" class="carde w-4 lg:w-24" data-position="4"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="RB" class="carde w-4 md:w-16 lg:w-24" data-position="0"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="RCB" class="carde w-4 md:w-16 lg:w-24" data-position="1"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="LCB" class="carde w-4 md:w-16 lg:w-24" date-position="3"></div>
+                            <div class="cursor-pointer"><img src="images/gold84.png" id="LB" alt="" class="carde w-4  md:w-16 lg:w-24" data-position="4"></div>
                     </div>
                 </div>
                     <div class="flex justify-center cursor-pointer" id="gool">
-                            <img src="images/gold84.png" id="GK" alt="" class="carde w-4 lg:w-24" data-position="0">
+                            <img src="images/gold84.png" id="GK" alt="" class="carde w-4 md:w-16 lg:w-24" data-position="0">
                     </div>
                 </div>
             </div>
             <!-- div echanges -->
-             <div class="flex flex-col gap-4 bg-gray-900 lg:w-1/2 ">
-             <div class="flex justify-end w-full ">
-                <button id="bteOuvrireModalAjout" class="h-8 p-2 bg-[#03346E] text-white rounded-lg">add player</button>
-             </div>
+             <div class="flex flex-col gap-4 bg-gray-900 lg:w-1/2 p-8 ">
+                <h1 class="text-white">Create Squad</h1>
+                <input type="text" placeholder="Squad Name" class="p-2 rounded-lg focus:outline-none   focus:border-blue-500 ">
+                
+                <div class="w-full h-1 bg-gray-500 rounded-lg"></div>
+                <h1 class="text-white">Squad info</h1>
+                <select name="" id="" class="p-2 rounded-lg focus:border-blue-500 focus:outline-none ">
+                    <option value="">4-4-2</option>
+                </select>
+                
+                <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione saepe qui distinctio reprehenderit enim atque suscipit repellendus aliquam, totam aperiam fugiat culpa recusandae veritatis voluptates vel quis. Deleniti, doloribus consequatur?</p>
+                <label class="text-white dark:text-gray-200">height</label>
+                <input id="range" type="range" class="block w-full py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  focus:border-blue-500 focus:outline-none ">
+                <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione saepe qui distinctio reprehenderit enim atque suscipit repellendus aliquam, totam aperiam fugiat culpa recusandae veritatis voluptates vel quis. Deleniti, doloribus consequatur?</p>
+                <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione saepe qui distinctio reprehenderit enim atque suscipit repellendus aliquam, totam aperiam fugiat culpa recusandae veritatis voluptates vel quis. Deleniti, doloribus consequatur?</p>
+                <button id="bteOuvrireModalAjout" class="p-2 bg-[#03346E] text-white rounded-lg">add player</button>
+            </div>
+                
+             
            
             
             </div>

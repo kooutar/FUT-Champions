@@ -441,7 +441,7 @@ const statusPlayer=document.querySelector('#status');
 
 // *************************************************
 const containerChangement=document.querySelector('#containerChangement')
-let tab=[];
+let FiltredPlayers=[];
 let arrayListePrincipale=[]
 // fermeture de modal
 
@@ -463,101 +463,113 @@ carde.forEach((carde)=>{
       if(carde.id=="LST"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "ST")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "ST")
+        
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
-       
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
+          
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="GK"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-         tab=players.filter(players=> players.position == "GK")
-        for(i=0;i<tab.length;i++)
+         FiltredPlayers=players.filter(players=> players.position == "GK")
+        for(i=0;i<FiltredPlayers.length;i++)
         {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
         }
         formcarde.classList.remove('hidden')
        } if(carde.id=="RST"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position =="ST")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position =="ST")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RW"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "RW")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "RW")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RCM"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "CM")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "CM")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LCM"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "CM")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "CM")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LW"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "LW")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "LW")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "RB")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "RB")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="RCB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "CB")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "CB")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LCB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "CB")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "CB")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }if(carde.id=="LB"){
         bgCarde.innerHTML=``
         console.log(carde.id)
-        tab=players.filter(players=> players.position == "LB")
-       for(i=0;i<tab.length;i++)
+        FiltredPlayers=players.filter(players=> players.position == "LB")
+       for(i=0;i<FiltredPlayers.length;i++)
        {
-        styleCarde(bgCarde, tab[i],carde)
+        styleCarde(bgCarde, FiltredPlayers[i])
+        ajoutToTerrain(carde)
        }
        formcarde.classList.remove('hidden')
       }
@@ -565,13 +577,14 @@ carde.forEach((carde)=>{
 })
 
   // fct style carde
-  function styleCarde(parentDiv, player,carde)
+  function styleCarde(parentDiv, player)
   {
     
     if(player.position=="GK")
       {
        parentDiv.innerHTML+=`
-           <div class="cardeajout flex justify-center" id="${player.name}">
+       <div class="cardeajout flex">
+           <div class="flex justify-center" id="${player.name}">
      <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
          <div class="flex flex-col ">
              <div class="flex">
@@ -615,11 +628,13 @@ carde.forEach((carde)=>{
              </div>
                </div>
  </div>
- 
+ <img id="echangeIcone" src="images/flat-icon-of-cyclic-rotation-recycling-recurrence-renewal-free-vector-removebg-preview.png" alt="" srcset="" class="w-8 h-8 hidden">
+ </div>
        `
       }else{
        parentDiv.innerHTML+=`
-          <div class="cardeajout flex justify-center" id="${player.name}">
+       <div class="cardeajout flex" >
+          <div class="flex justify-center" id="${player.name}">
      <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
          <div class="flex flex-col">
              <div class="flex">
@@ -660,9 +675,11 @@ carde.forEach((carde)=>{
              </div>
      </div>
  </div>
+ <img id="echangeIcone" src="images/flat-icon-of-cyclic-rotation-recycling-recurrence-renewal-free-vector-removebg-preview.png" alt="" srcset="" class="w-8 h-8 hidden">
+ </div>
        `
       }
-      ajoutToTerrain(carde)
+     
   }
 
 // fct ajouter palyer a terrain
@@ -674,7 +691,17 @@ function ajoutToTerrain(carde){
       carte.classList.remove('cardeAjoutTerrain')
       carde.classList.add('hidden') 
        carde.parentElement.appendChild(carte)
+       const imageIcon=carte.querySelector('#echangeIcone')
+       imageIcon.classList.remove('hidden')
         formcarde.classList.add('hidden')
+        // console.log(imageIcon)
+      //   imageIcon.addEventListener('click',()=>{
+      //     console.log('click')
+      //     // formcarde.classList.remove('hidden')
+      //     // formcarde.style.display = 'block';
+      //     console.log('hidden class removed'); // Ce message doit s'afficher
+      //     // document.querySelector('#formcarde').remove('hidden')
+      //   })
         carte.addEventListener('click',()=>{
         formcarde.classList.remove('hidden')
         ajoutToTerrain(carte);
@@ -1039,12 +1066,23 @@ function EstVide(inputeValue)
 
 Array.from(containerChangement.children).forEach(playerChngement => {
   playerChngement.addEventListener('click', () => {
-    console.log(playerChngement)
-    removeplayer(playerChngement)
+    // console.log(playerChngement)
+    modalePourSupprission(playerChngement)
+    document.querySelector('#modaleremove').classList.remove('hidden')
   });
 });
 
-
+document.querySelector('#bteNonModalSupprission').addEventListener('click',()=>{
+  console.log('clik')
+   document.querySelector('#modaleremove').classList.add('hidden')
+})
+function modalePourSupprission(playerChngement){
+document.querySelector('#bteOuiModalSupprission').addEventListener('click',()=>{
+  removeplayer(playerChngement)
+   document.querySelector('#modaleremove').classList.add('hidden')
+  //  alert('voutre suuprission ce fait avec sussés')
+})
+}
 function removeplayer(playerChngement) {
  
   const playerName = playerChngement.id;
@@ -1056,7 +1094,7 @@ function removeplayer(playerChngement) {
    
     players.splice(playerIndex, 1);
 
-    // Retirer l'élément de la DOM
+    
     playerChngement.remove();
 
     console.log(`Player "${playerName}" removed.`);

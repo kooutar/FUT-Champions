@@ -11,10 +11,53 @@
       
     
         <!-- Main modal -->
-        
+        <div class="cardeajout" >
+          <div class=" flex justify-center" id="${player.name}">
+     <div class="flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
+         <div class="flex flex-col">
+             <div class="flex">
+                 <div class="top-[310px] flex flex-col mt-4">
+                     <p class="">${player.rating}</p>
+                     <p>${player.position}</p>
+                 </div> <!-- Fermeture de la div "absolute top-[310px] flex flex-col" -->
+                 <img src="${player.photo}" class="h-[100px] w-24 relative">
+             </div>
+             <h6 class="text-center text-sm">${player.name}</h6>
+         </div>
+         
+         <div class="flex justify-center gap-2">
+             <div class="flex flex-col">
+                 <p class="text-[9px]">PAC</p>
+                 <p class="text-[9px]">${player.pace}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">SHO</p>
+                 <p class="text-[9px]">${player.shooting}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">DRI</p>
+                 <p class="text-[9px]">${player.dribbling}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">DEF</p>
+                 <p class="text-[9px]">${player.defending}</p>
+             </div>
+             <div class="flex flex-col">
+                 <p class="text-[9px]">PHY</p>
+                 <p class="text-[9px]">${player.physical}</p>
+             </div> 
+         </div>
+         <div class="flex gap-4">
+                 <img src="${player.flag}" alt="" srcset="" class="w-4">
+                 <img src="${player.logo}" alt="" srcset="" class="w-4">
+             </div>
+     </div>
+ </div>
+ <img src="images/flat-icon-of-cyclic-rotation-recycling-recurrence-renewal-free-vector-removebg-preview.png" alt="" srcset="" class="w-8">
+ </div>
             
             
-                <div id="modalAjout" class=" flex justify-center items-center  fixed inset-0 bg-black/50 z-50 hidden ">
+                <!-- <div id="modalAjout" class=" flex justify-center items-center  fixed inset-0 bg-black/50 z-50 hidden ">
                     <div class=" w-full md:w-1/2 bg-gray-900 p-4 rounded-lg text-white">
                         <div class="flex justify-between ">
                             <img src="images/logo.png" alt="" class="w-16">
@@ -30,11 +73,11 @@
                                 <label for="">photo Player</label>
                                 <input  id="imagPlayer" type="text" placeholder="photo player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
                             </div>
-                            <!-- <div class="flex flex-col gap-1">
+                           <div class="flex flex-col gap-1">
                                 <label for="">Nom Player</label>
                                 <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
                             </div> -->
-                            <div class="flex gap-2">
+                            <!-- <div class="flex gap-2">
                                 <div class="flex flex-col gap-1 w-1/2">
                                     <label for="">country</label>
                                     <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
@@ -81,7 +124,7 @@
                          </form>
                     </div>
                 </div>
-                </div>
+                </div> --> 
             
     
         
