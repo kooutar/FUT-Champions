@@ -9,74 +9,48 @@
 <body class="flex justify-center">
     
       
-    <!-- <div class="carde w-24 h-32  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div> -->
-    <div class="bg-cover bg-center bg-no-repeat md:h-[800px] " style="background-image: url('images/terrain.jpeg');">
-        <div class="container-carde flex flex-col ">
-            <div class="flex justify-center gap-12" id="attack">
-                <div class="carde flex flex-col  w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')">
-                    <div class="flex justify-center pt-2 ">
-                        <div>
-                            <p class="text-[10px]">50</p>
-                            <p class="text-[10px]">LW</p>
-                        </div>
-                        <img src="images/messi.jpg" alt="" srcset="" class="w-8">
-                     
-                        </div>
-                        <p class="text-center text-[10px]">messi</p>
-                    <div class="flex justify-center gap-1">
-                        <div class="flex flex-col">
-                            <p class="text-[2px]">CHOT</p>
-                            <p class="text-[5px]">50</p>
-                        </div>
-                        <div class="flex flex-col">
-                            <p class="text-[2px]">CHOT</p>
-                            <p class="text-[5px]">50</p>
-                        </div>
-                        <div class="flex flex-col">
-                            <p class="text-[2px]">CHOT</p>
-                            <p class="text-[5px]">50</p>
-                        </div>
-                        <div class="flex flex-col">
-                            <p class="text-[2px]">CHOT</p>
-                            <p class="text-[5px]">50</p>
-                        </div>
-                        <div class="flex flex-col">
-                            <p class="text-[2px]">CHOT</p>
-                            <p class="text-[5px]">50</p>
-                        </div>
-                        <div class="flex flex-col">
-                            <p class="text-[2px]">CHOT</p>
-                            <p class="text-[5px]">50</p>
-                        </div>
+    <div class="flex justify-center cardeajout " id="${player.name}">
+        <div class="flex flex-col  pl-2 pt-2 w-16 h-24 lg:w-24 lg:h-36 bg-cover bg-center bg-no-repeat  items-center" style="background-image: url('images/gold84.png');">
+            <div class="flex flex-col">
+                <div class="flex">
+                    <div class="top-[310px] flex flex-col ">
+                        <p class="text-[10px] lg:text-sm"></p>
+                        <p class="text-[10px] lg:text-sm"></p>
+                    </div> 
+                    <img src="images/messi.jpg" class="w-8">
                 </div>
-                <div class="flex justify-center gap-2">
-                    <img src="images/messi.jpg" alt="" class="w-4">
-                    <img src="images/messi.jpg" alt="" class="w-4">
-                </div>
-                    </div>
-                    
-                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                <p id="namePlayer" class="text-center text-[8px] lg:text-sm"></p>
             </div>
-            <div class=" pb-12 flex flex-col" >
-                <div class="flex justify-center gap-[8vw] mt-[100px]" id="defance">
-                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
-                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
-                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
-                    <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+            
+            <div class="flex justify-center gap-1 lg:gap-[0.8px]">
+                <div class="flex flex-col">
+                    <p class="text-[4px] lg:text-[8px]">PAC</p>
+                    <p class="text-[4px] lg:text-[8px]"></p>
                 </div>
-          
-            <div class="flex justify-center gap-[8vw] mt-[100px]" id="defance">
-                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
-                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
-                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
-                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
+                <div class="flex flex-col">
+                    <p class="text-[4px] lg:text-[8px]">SHO</p>
+                    <p class="text-[4px] lg:text-[8px]"></p>
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-[4px] lg:text-[8px]">DRI</p>
+                    <p class="text-[4px] lg:text-[8px]"></p>
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-[4px] lg:text-[8px]">DEF</p>
+                    <p class="text-[4px] lg:text-[8px]"></p>
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-[4px] lg:text-[8px]">PHY</p>
+                    <p class="text-[4px] lg:text-[8px]"></p>
+                </div> 
             </div>
+            <div class="flex gap-2">
+                    <img src="{player.flag}" alt="" srcset="" class="w-2">
+                    <img src="{player.logo}" alt="" srcset="" class="w-2">
+                </div>
         </div>
-            <div class="flex justify-center cursor-pointer" id="gool">
-                <div class="carde w-16 h-24  bg-cover bg-center bg-no-repeat" style="background-image:url('images/gold84.png')"></div>
-            </div>
-        </div>
+        <img id="echangeIcone" src="images/png-clipart-computer-icons-raypa-r-espinar-s-l-icon-design-replacement-miscellaneous-blue-removebg-preview.png" alt="" srcset="" class="echangeIcone mb-4 w-4 h-2 md:w-8 h-8 cursor-pointer">
     </div>
-       
+    
 </body>
 </html>

@@ -580,8 +580,8 @@ carde.forEach((carde)=>{
     if(player.position=="GK")
       {
        parentDiv.innerHTML+=`
-       <div class="cardeajout flex">
-           <div class="flex justify-center" id="${player.name}">
+       <div class="cardeajout flex" id="${player.name}">
+           <div class="flex justify-center" >
      <div class="flex flex-col bg-cover bg-center bg-no-repeat  w-16 h-24 pl-2 pt-2 lg:w-24 lg:h-36 items-center pt-4  " style="background-image: url('images/gold84.png');">
          <div class="flex flex-col ">
              <div class="flex">
@@ -591,7 +591,7 @@ carde.forEach((carde)=>{
                </div>
              <img src="${player.photo}" class="w-8">
             </div>
-             <p class="text-center text-[8px] lg:text-sm">${player.name}</p>
+             <p id="namePlayer" class="text-center text-[8px] lg:text-sm">${player.name}</p>
          </div>
          <div class="flex justify-center gap-[3x] lg:gap-[0.8px]">
            <div class="flex flex-col">
@@ -625,13 +625,13 @@ carde.forEach((carde)=>{
              </div>
                </div>
  </div>
- <img id="echangeIcone" src="images/flat-icon-of-cyclic-rotation-recycling-recurrence-renewal-free-vector-removebg-preview.png" alt="" srcset="" class="hidden w-4 h-2 md:w-8 h-8 ">
+ <img id="echangeIcone" src="images/png-clipart-computer-icons-raypa-r-espinar-s-l-icon-design-replacement-miscellaneous-blue-removebg-preview.png" alt="" srcset="" class="echangeIcone hidden w-4 h-2 md:w-8 h-8 cursor-pointer">
  </div>
        `
       }else{
        parentDiv.innerHTML+=`
-       <div class="cardeajout flex " >
-          <div class="flex justify-center  " id="${player.name}">
+       <div class="flex cardeajout " id="${player.name}" >
+          <div class="flex justify-center ">
      <div class="flex flex-col  pl-2 pt-2 w-16 h-24 lg:w-24 lg:h-36 bg-cover bg-center bg-no-repeat  items-center" style="background-image: url('images/gold84.png');">
          <div class="flex flex-col">
              <div class="flex">
@@ -641,7 +641,7 @@ carde.forEach((carde)=>{
                  </div> 
                  <img src="${player.photo}" class="w-8">
              </div>
-             <p class="text-center text-[8px] lg:text-sm">${player.name}</p>
+             <p id="namePlayer" class="text-center text-[8px] lg:text-sm">${player.name}</p>
          </div>
          
          <div class="flex justify-center gap-1 lg:gap-[0.8px]">
@@ -672,7 +672,7 @@ carde.forEach((carde)=>{
              </div>
      </div>
  </div>
- <img id="echangeIcone" src="images/flat-icon-of-cyclic-rotation-recycling-recurrence-renewal-free-vector-removebg-preview.png" alt="" srcset="" class="hidden mb-4 w-4 h-2 md:w-8 h-8 ">
+ 
  </div>
        `
       }
@@ -681,33 +681,47 @@ carde.forEach((carde)=>{
 
 // fct ajouter palyer a terrain
 function ajoutToTerrain(carde){
-
   const cardeAjoutTerrain=document.querySelectorAll('.cardeajout');
   cardeAjoutTerrain.forEach(carte=>{
     carte.addEventListener('click',()=>{
-      carte.classList.remove('cardeAjoutTerrain')
-      carde.classList.add('hidden') 
+      carde.classList.add('hidden')
+      
+      arrayListePrincipale.push(players[FiltredPlayers.findIndex(player=>player.name==carte.id)])
+      
        carde.parentElement.appendChild(carte)
-       const imageIcon=carte.querySelector('#echangeIcone')
-       imageIcon.classList.remove('hidden')
+      //  carte.classList.add('carde')
         formcarde.classList.add('hidden')
-        // console.log(imageIcon)
-      //   imageIcon.addEventListener('click',()=>{
-      //     console.log('click')
-      //     // formcarde.classList.remove('hidden')
-      //     // formcarde.style.display = 'block';
-      //     console.log('hidden class removed'); // Ce message doit s'afficher
-      //     // document.querySelector('#formcarde').remove('hidden')
-      //   })
-        carte.addEventListener('click',()=>{
-        formcarde.classList.remove('hidden')
-        ajoutToTerrain(carte);
-      })
+        removerPlayerFromChangement(carte)
+        CreateIconChangement(carte)
+       
     })
   })
 }
+function CreateIconChangement(carte){
+  console.log('je suis a CreateIconChangement')
+ let IconChangement=document.createElement('img')
+ IconChangement.src="images/png-clipart-computer-icons-raypa-r-espinar-s-l-icon-design-replacement-miscellaneous-blue-removebg-preview.png"
+ IconChangement.classList.add("mb-4","w-4","h-2", "md:w-8" ,"md:h-8" ,"cursor-pointer")
+
+ console.log(IconChangement.src)
+ carte.parentElement.classList.add("flex")
+ carte.parentElement.appendChild(IconChangement)
+ IconChangement.addEventListener('click',()=>{
+  formcarde.classList.remove('hidden')
+ })
+ 
+}
 
 
+function removerPlayerFromChangement(player){
+  Array.from(containerChangement.children).forEach(playerChngement => {
+       if(player.id==playerChngement.id)
+       {
+            removeplayer(playerChngement)
+       }
+    });
+  
+}
 
 // afficher les champs pour calculer statique selon position
 positionPlayer.addEventListener('change',()=>{
@@ -891,7 +905,7 @@ function  addPlayer()
 {
   if(positionPlayer.value=="GK")
     {
-      
+      Exist(namePlayer.value)
       let ratingGk=(parseInt(document.querySelector('#Diving').value)+parseInt(document.querySelector('#handling').value)+parseInt(document.querySelector('#kicking').value)+parseInt(document.querySelector('#reflexes').value)+parseInt(document.querySelector('#speed').value)+parseInt(document.querySelector('#positioning').value))/6
       createObjetPayerGK(ratingGk,document.querySelector('#Diving').value,document.querySelector('#handling').value,document.querySelector('#kicking').value,document.querySelector('#reflexes').value,document.querySelector('#speed').value,document.querySelector('#positioning').value)
       containerChangement.innerHTML+=`
@@ -942,6 +956,7 @@ function  addPlayer()
 
      `
     }else{
+      Exist(namePlayer.value)
       let ratingNonGk=(parseInt(document.querySelector('#pace').value)+parseInt(document.querySelector('#shooting').value)+parseInt(document.querySelector('#passing').value)+parseInt(document.querySelector('#dribbling').value)+parseInt(document.querySelector('#defending').value)+parseInt(document.querySelector('#physical').value))/6
       createObjetPayer(ratingNonGk,document.querySelector('#pace').value,document.querySelector('#shooting').value,document.querySelector('#passing').value,document.querySelector('#dribbling').value,document.querySelector('#defending').value,document.querySelector('#physical').value)
       containerChangement.innerHTML+=`
@@ -994,6 +1009,12 @@ function  addPlayer()
     }
 
    modaleAdd.classList.add('hidden')
+}
+function Exist(name)
+{
+      if(players.findIndex(player=>player.name.toLowerCase()==name.toLowerCase())==-1||(arrayListePrincipale.findIndex(player=>player.name.toLowerCase()==name.toLowerCase()))==-1)
+        return true
+      return false
 }
 
 function createObjetPayerGK(ratingGk,diving,handling,kicking,kicking,reflexes,speed,positioning)
