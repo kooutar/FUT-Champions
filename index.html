@@ -17,42 +17,38 @@
             <button id="closeBte" class="closeBte text-[25px]">&times;</button>
         </div>
         <div class="w-full h-1 bg-gray-500"></div>
-         <form action="" class="flex flex-col gap-2">
+         <form action="" class="flex flex-col gap-2" onsubmit="return addPlayer()">
             <div class="flex flex-col gap-1">
                 <label for="" class="text-white">Nom Player</label>
-                <input  id="namePlayer" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
+                <input  id="namePlayer" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 " required>
             </div>
             <div class="flex flex-col gap-1">
                 <label for="" class="text-white">photo Player</label>
-                <input  id="imagPlayer" type="text" placeholder="photo player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
+                <input  id="imagPlayer" type="text" placeholder="photo player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 " required>
             </div>
-            <!-- <div class="flex flex-col gap-1">
-                <label for="">Nom Player</label>
-                <input type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 ">
-            </div> -->
             <div class="flex gap-2">
                 <div class="flex flex-col gap-1 w-1/2">
                     <label for="" class="text-white">country</label>
-                    <input id="nationality" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                    <input id="nationality" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
                 </div>
                 <div class="flex flex-col gap-1 w-1/2">
                     <label for="" class="text-white">flag</label>
-                    <input id="flag" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                    <input id="flag" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 " required>
                 </div>
            </div>
            <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">club name</label>
-                <input  id="club"type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input  id="club"type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">club</label>
-                <input id="clubLogo" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="clubLogo" type="text" placeholder="nom player" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300 " required>
             </div>
        </div>
        <div class="flex flex-col gap-2 ">
         <label for=""class="text-white" >position</label>
-       <select name="" id="positionPlayer" class="rounded-lg p-2 border-2 text-black focus:outline-none focus:border-blue-500 hover:border-blue-300">
+       <select name="" id="positionPlayer" class="rounded-lg p-2 border-2 text-black focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
         <option value="" disabled selected>-- Sélectionnez une option --</option>
         <option value="GK">GK</option>
         <option value="LB">LB</option>
@@ -67,7 +63,7 @@
     <div id="statistique" class="flex flex-col gap-2">
  
     </div>
-    <button type="button" id="bteAddPlayer" onclick="addPlayer()" class="bg-gray-400 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300">
+    <button type="submit" id="bteAddPlayer"  class="bg-gray-400 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-gray-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300">
         Add Player
       </button>
       

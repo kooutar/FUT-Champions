@@ -435,7 +435,8 @@ const flag=document.querySelector('#flag');
 const clubLogo=document.querySelector('#clubLogo');
 
 // *****************************************************
-  
+  const nationality=document.querySelector('#nationality');
+  const club=document.querySelector('#club');
 // *************************************************
 const containerChangement=document.querySelector('#containerChangement')
 let FiltredPlayers=[];
@@ -455,124 +456,45 @@ closeBte.forEach((closeBte)=>{
     })
 });
 // 
-carde.forEach((carde)=>{
-    carde.addEventListener('click',()=>{ 
-      if(carde.id=="LST"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "ST")
-        
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-          
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="GK"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-         FiltredPlayers=players.filter(players=> players.position == "GK")
-        for(i=0;i<FiltredPlayers.length;i++)
-        {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-        }
-        formcarde.classList.remove('hidden')
-       } if(carde.id=="RST"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position =="ST")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="RW"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "RW")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="RCM"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "CM")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="LCM"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "CM")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="LW"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "LW")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="RB"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "RB")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="RCB"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "CB")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="LCB"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "CB")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }if(carde.id=="LB"){
-        bgCarde.innerHTML=``
-        console.log(carde.id)
-        FiltredPlayers=players.filter(players=> players.position == "LB")
-       for(i=0;i<FiltredPlayers.length;i++)
-       {
-        styleCarde(bgCarde, FiltredPlayers[i])
-        ajoutToTerrain(carde)
-       }
-       formcarde.classList.remove('hidden')
-      }
-    })
-})
+// Fonction principale pour gérer les clics et filtrer les joueurs
+function handleCardClick(carde, position) {
+  bgCarde.innerHTML = ``; // Réinitialise le contenu
+  console.log(carde.id); // Affiche l'ID de la carte cliquée
 
+  const filteredPlayers = players.filter(player => player.position === position); // Filtre les joueurs par position
+
+  // Ajoute les cartes pour chaque joueur filtré
+  filteredPlayers.forEach(player => {
+    styleCarde(bgCarde, player);
+    ajoutToTerrain(carde);
+  });
+
+  formcarde.classList.remove('hidden'); // Affiche le formulaire
+}
+
+// Attache les gestionnaires d'événements aux cartes
+carde.forEach(carde => {
+  carde.addEventListener('click', () => {
+    const positionMap = {
+      LST: "ST",
+      GK: "GK",
+      RST: "ST",
+      RW: "RW",
+      RCM: "CM",
+      LCM: "CM",
+      LW: "LW",
+      RB: "RB",
+      RCB: "CB",
+      LCB: "CB",
+      LB: "LB"
+    };
+
+    // Si l'ID de la carte correspond à une position connue, applique la logique
+    if (positionMap[carde.id]) {
+      handleCardClick(carde, positionMap[carde.id]);
+    }
+  });
+});
   // fct style carde
   function styleCarde(parentDiv, player)
   {
@@ -582,7 +504,7 @@ carde.forEach((carde)=>{
        parentDiv.innerHTML+=`
        <div class="cardeajout flex" id="${player.name}">
            <div class="flex justify-center" >
-     <div class="flex flex-col bg-cover bg-center bg-no-repeat  w-16 h-24 pl-2 pt-2 lg:w-24 lg:h-36 items-center pt-4  " style="background-image: url('images/gold84.png');">
+     <div class="cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat  w-16 h-24 pl-2 pt-2 lg:w-24 lg:h-36 items-center pt-4  " style="background-image: url('images/gold84.png');">
          <div class="flex flex-col ">
              <div class="flex">
                  <div class=" top-[310px] flex flex-col ">
@@ -632,7 +554,7 @@ carde.forEach((carde)=>{
        parentDiv.innerHTML+=`
        <div class="flex cardeajout " id="${player.name}" >
           <div class="flex justify-center ">
-     <div class="flex flex-col  pl-2 pt-2 w-16 h-24 lg:w-24 lg:h-36 bg-cover bg-center bg-no-repeat  items-center" style="background-image: url('images/gold84.png');">
+     <div class="cursor-pointer flex flex-col  pl-2 pt-2 w-16 h-24 lg:w-24 lg:h-36 bg-cover bg-center bg-no-repeat  items-center" style="background-image: url('images/gold84.png');">
          <div class="flex flex-col">
              <div class="flex">
                  <div class="top-[310px] flex flex-col ">
@@ -681,8 +603,11 @@ carde.forEach((carde)=>{
 
 // fct ajouter palyer a terrain
 function ajoutToTerrain(carde){
+  console.log('je suis a ajoutToTerrain')
   const cardeAjoutTerrain=document.querySelectorAll('.cardeajout');
+  
   cardeAjoutTerrain.forEach(carte=>{
+    
     carte.addEventListener('click',()=>{
       carde.classList.add('hidden')
       
@@ -692,8 +617,10 @@ function ajoutToTerrain(carde){
       //  carte.classList.add('carde')
         formcarde.classList.add('hidden')
         removerPlayerFromChangement(carte)
-        CreateIconChangement(carte)
-       
+         CreateIconChangement(carte)
+        // console.log('class '+carte.classList)
+        // carte.classList.remove('cardeajout')
+        // console.log('class '+carte.classList)
     })
   })
 }
@@ -702,13 +629,31 @@ function CreateIconChangement(carte){
  let IconChangement=document.createElement('img')
  IconChangement.src="images/png-clipart-computer-icons-raypa-r-espinar-s-l-icon-design-replacement-miscellaneous-blue-removebg-preview.png"
  IconChangement.classList.add("mb-4","w-4","h-2", "md:w-8" ,"md:h-8" ,"cursor-pointer")
-
- console.log(IconChangement.src)
  carte.parentElement.classList.add("flex")
  carte.parentElement.appendChild(IconChangement)
  IconChangement.addEventListener('click',()=>{
+  console.log('hihisf')
+  styleCarde(bgCarde,FiltredPlayers)
   formcarde.classList.remove('hidden')
  })
+
+//  console.log(IconChangement.src)
+//  carte.parentElement.classList.add("flex")
+// Array.from(carte.parentElement.children).forEach(icon=>{
+//   if(icon.src==IconChangement.src){
+//     console.log('exist')
+//     return
+//   }
+    
+//   else{
+//     console.log('not exist')
+//     carte.parentElement.appendChild(IconChangement)
+//     IconChangement.addEventListener('click',()=>{
+//      formcarde.classList.remove('hidden')
+//     })
+//   }
+// })
+
  
 }
 
@@ -720,6 +665,11 @@ function removerPlayerFromChangement(player){
             removeplayer(playerChngement)
        }
     });
+  let playerIndex=FiltredPlayers.findIndex(playerFilterd=>player.name==playerFilterd.name)
+    if(playerIndex!=-1)
+    {
+      FiltredPlayers.splice(playerIndex,1);
+    }
   
 }
 
@@ -732,31 +682,31 @@ positionPlayer.addEventListener('change',()=>{
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">Diving</label>
-                <input id="Diving" type="text" placeholder="diving" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="Diving" type="text" placeholder="diving" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">handling</label>
-                <input id="handling" type="text" placeholder="handling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="handling" type="text" placeholder="handling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">kicking</label>
-                <input id="kicking" type="text" placeholder="kicking" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="kicking" type="text" placeholder="kicking" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">reflexes</label>
-                <input id="reflexes" type="text" placeholder="reflexes" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="reflexes" type="text" placeholder="reflexes" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">speed</label>
-                <input id="speed" type="text" placeholder="speed" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="speed" type="text" placeholder="speed" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">positioning</label>
-                <input id="positioning" type="text" placeholder="positioning" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="positioning" type="text" placeholder="positioning" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         `
@@ -766,31 +716,31 @@ positionPlayer.addEventListener('change',()=>{
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">pace</label>
-                <input id="pace"type="text" placeholder="pace" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="pace"type="text" placeholder="pace" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">shooting</label>
-                <input id="shooting" type="text" placeholder="shooting" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="shooting" type="text" placeholder="shooting" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">passing</label>
-                <input id="passing" type="text" placeholder="passing" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="passing" type="text" placeholder="passing" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">dribbling</label>
-                <input id="dribbling" type="text" placeholder="dribbling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="dribbling" type="text" placeholder="dribbling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">defending</label>
-                <input id="defending" type="text" placeholder="defending" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="defending" type="text" placeholder="defending" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">physical</label>
-                <input id="physical" type="text" placeholder="physical" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300  ">
+                <input id="physical" type="text" placeholder="physical" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         `  
@@ -905,6 +855,7 @@ function  addPlayer()
 {
   if(positionPlayer.value=="GK")
     {
+      ValidationNumerique(document.querySelector('#Diving').value,document.querySelector('#handling').value,document.querySelector('#kicking').value,document.querySelector('#reflexes').value,document.querySelector('#speed').value,document.querySelector('#positioning').value)
       Exist(namePlayer.value)
       let ratingGk=(parseInt(document.querySelector('#Diving').value)+parseInt(document.querySelector('#handling').value)+parseInt(document.querySelector('#kicking').value)+parseInt(document.querySelector('#reflexes').value)+parseInt(document.querySelector('#speed').value)+parseInt(document.querySelector('#positioning').value))/6
       createObjetPayerGK(ratingGk,document.querySelector('#Diving').value,document.querySelector('#handling').value,document.querySelector('#kicking').value,document.querySelector('#reflexes').value,document.querySelector('#speed').value,document.querySelector('#positioning').value)
@@ -1009,6 +960,7 @@ function  addPlayer()
     }
 
    modaleAdd.classList.add('hidden')
+   event.preventDefault();
 }
 function Exist(name)
 {
@@ -1019,11 +971,12 @@ function Exist(name)
 
 function createObjetPayerGK(ratingGk,diving,handling,kicking,kicking,reflexes,speed,positioning)
 {
+  console.log(players.length)
  const  newPlayer={
      name:namePlayer.value,
      photo:imagPlayer.value,
      position:positionPlayer.value,
-     nationality:document.querySelector('#nationality').value,
+     nationality:nationality.value,
      flag:flag.value,
      club:document.querySelector('#club').value,
      logo:clubLogo.value,
@@ -1036,6 +989,7 @@ function createObjetPayerGK(ratingGk,diving,handling,kicking,kicking,reflexes,sp
      positioning:parseInt(positioning),
  }
  players.push(newPlayer)
+ console.log(players.length)
 }
 function createObjetPayer(rating,diving,handling,kicking,kicking,reflexes,speed,positioning)
 {
@@ -1043,9 +997,9 @@ function createObjetPayer(rating,diving,handling,kicking,kicking,reflexes,speed,
      name:namePlayer.value,
      photo:imagPlayer.value,
      position:positionPlayer.value,
-     nationality:document.querySelector('#nationality').value,
+     nationality:nationality.value,
      flag:flag.value,
-     club:document.querySelector('#club').value,
+     club:club.value,
      logo:clubLogo.value,
      rating:rating,
      pace:parseInt(diving),
@@ -1059,17 +1013,19 @@ function createObjetPayer(rating,diving,handling,kicking,kicking,reflexes,speed,
 }
 
 function TousChampsRemplais(){
-  if(EstVide(namePlayer.value)||EstVide(imagPlayer.value)||EstVide(flag.value)||EstVide(clubLogo.value)||EstVide(positionPlayer.value)|| EstVide()) 
-  {
-    alert("il faut remplaire Tous les champs");
-  }else {
-    if(positionPlayer.value=="GK")
-    {
-      
-    }
-   }
+  console.log('gffhwgs')
+};
+function ValidationNumerique(num1,num2,num3,num4,num5,num6){
+  if(isNumber(num1)&&isNumber(num2)&&isNumber(num3)&&isNumber(num4)&&isNumber(num5)&&isNumber(num6)){
+    console.log('est number')
+  }else{
+    console.log('n est pas number')
+  }
 }
-
+function isNumber(input) {
+  const regex = /^\d+$/;
+  return regex.test(input);
+}
 function EstVide(inputeValue)
 {
   if(inputeValue.trim() == '' )
@@ -1084,7 +1040,6 @@ function EstVide(inputeValue)
 
 Array.from(containerChangement.children).forEach(playerChngement => {
   playerChngement.addEventListener('click', () => {
-    // console.log(playerChngement)
     modalePourSupprission(playerChngement)
     document.querySelector('#modaleremove').classList.remove('hidden')
   });

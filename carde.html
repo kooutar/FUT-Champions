@@ -9,48 +9,16 @@
 <body class="flex justify-center">
     
       
-    <div class="flex justify-center cardeajout " id="${player.name}">
-        <div class="flex flex-col  pl-2 pt-2 w-16 h-24 lg:w-24 lg:h-36 bg-cover bg-center bg-no-repeat  items-center" style="background-image: url('images/gold84.png');">
-            <div class="flex flex-col">
-                <div class="flex">
-                    <div class="top-[310px] flex flex-col ">
-                        <p class="text-[10px] lg:text-sm"></p>
-                        <p class="text-[10px] lg:text-sm"></p>
-                    </div> 
-                    <img src="images/messi.jpg" class="w-8">
-                </div>
-                <p id="namePlayer" class="text-center text-[8px] lg:text-sm"></p>
-            </div>
-            
-            <div class="flex justify-center gap-1 lg:gap-[0.8px]">
-                <div class="flex flex-col">
-                    <p class="text-[4px] lg:text-[8px]">PAC</p>
-                    <p class="text-[4px] lg:text-[8px]"></p>
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-[4px] lg:text-[8px]">SHO</p>
-                    <p class="text-[4px] lg:text-[8px]"></p>
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-[4px] lg:text-[8px]">DRI</p>
-                    <p class="text-[4px] lg:text-[8px]"></p>
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-[4px] lg:text-[8px]">DEF</p>
-                    <p class="text-[4px] lg:text-[8px]"></p>
-                </div>
-                <div class="flex flex-col">
-                    <p class="text-[4px] lg:text-[8px]">PHY</p>
-                    <p class="text-[4px] lg:text-[8px]"></p>
-                </div> 
-            </div>
-            <div class="flex gap-2">
-                    <img src="{player.flag}" alt="" srcset="" class="w-2">
-                    <img src="{player.logo}" alt="" srcset="" class="w-2">
-                </div>
-        </div>
-        <img id="echangeIcone" src="images/png-clipart-computer-icons-raypa-r-espinar-s-l-icon-design-replacement-miscellaneous-blue-removebg-preview.png" alt="" srcset="" class="echangeIcone mb-4 w-4 h-2 md:w-8 h-8 cursor-pointer">
-    </div>
+   
     
 </body>
+<script>
+    imgSRC=document.createElement('img')
+    imgSetAttribute=document.createElement('img')
+    imgSetAttribute.setAttribute("src", "images/messi.png")
+    imgSRC.src='images/messi.png'
+    console.log("SRC "+imgSRC.src)
+    console.log("setAttribut "+imgSetAttribute.getAttribute("src"));
+
+</script>
 </html>
