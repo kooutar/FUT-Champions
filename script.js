@@ -682,31 +682,31 @@ positionPlayer.addEventListener('change',()=>{
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">Diving</label>
-                <input id="Diving" type="text" placeholder="diving" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="Diving" type="number" placeholder="diving" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">handling</label>
-                <input id="handling" type="text" placeholder="handling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="handling" type="number" placeholder="handling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">kicking</label>
-                <input id="kicking" type="text" placeholder="kicking" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="kicking" type="number" placeholder="kicking" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">reflexes</label>
-                <input id="reflexes" type="text" placeholder="reflexes" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="reflexes" type="number" placeholder="reflexes" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">speed</label>
-                <input id="speed" type="text" placeholder="speed" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="speed" type="number" placeholder="speed" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">positioning</label>
-                <input id="positioning" type="text" placeholder="positioning" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="positioning" type="number" placeholder="positioning" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         `
@@ -716,31 +716,31 @@ positionPlayer.addEventListener('change',()=>{
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">pace</label>
-                <input id="pace"type="text" placeholder="pace" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="pace"type="number" placeholder="pace" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">shooting</label>
-                <input id="shooting" type="text" placeholder="shooting" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="shooting" type="number" placeholder="shooting" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">passing</label>
-                <input id="passing" type="text" placeholder="passing" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="passing" type="number" placeholder="passing" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">dribbling</label>
-                <input id="dribbling" type="text" placeholder="dribbling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="dribbling" type="number" placeholder="dribbling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">defending</label>
-                <input id="defending" type="text" placeholder="defending" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="defending" type="number" placeholder="defending" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">physical</label>
-                <input id="physical" type="text" placeholder="physical" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="physical" type="number" placeholder="physical" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
             </div>
        </div>
         `  
@@ -758,7 +758,7 @@ function showPlayer(player){
   if(player.position=='GK'){
   containerChangement.innerHTML+=`
          <div class="flex justify-center" id="${player.name}">
-   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+   <div class="cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col ">
            <div class="flex">
                <div class=" top-[310px] flex flex-col mt-4">
@@ -801,13 +801,11 @@ function showPlayer(player){
            </div>
              </div>
 </div>
-
      `
-    }else{
-      
+    }else{ 
       containerChangement.innerHTML+=`
        <div class="flex justify-center" id="${player.name}">
-   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+   <div class="cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col ">
            <div class="flex">
                <div class=" top-[310px] flex flex-col mt-4">
@@ -853,15 +851,100 @@ function showPlayer(player){
 
 function  addPlayer()
 {
+  event.preventDefault();
+  if (Exist(namePlayer.value)) {
+        alert('Ce joueur existe déjà !');
+      } else {
+      //  console.log(Array.from(containerChangement.children)[0].id)
+        console.log('***************************')
+        stylerCratePourAjout()
+        // console.log(Array.from(containerChangement.children)[length].id)
+      }
+  
+   modaleAdd.classList.add('hidden')
+
+   
+}
+namePlayer.addEventListener('blur',()=>{
+  if(EstVide(namePlayer.value)||verifierInput(namePlayer.value)==false)
+  {
+    document.querySelector('#msgErrName').classList.remove('hidden')
+    namePlayer.value="";
+  }
+  
+})
+imagPlayer.addEventListener('blur',()=>{
+  if(EstVide(imagPlayer.value)||verifierImageUrl(imagPlayer.value)==false)
+    {
+      document.querySelector('#msgErrImage').classList.remove('hidden')
+      imagPlayer.value="";
+    }
+  })
+  nationality.addEventListener('blur',()=>{
+    if(EstVide(nationality.value)||verifierInput(nationality.value)==false)
+      {
+        document.querySelector('#msgErrcountry').classList.remove('hidden')
+        nationality.value="";
+      } 
+  })
+  club.addEventListener('blur',()=>{
+    if(EstVide(club.value)||verifierInput(club.value)==false)
+      {
+       document.querySelector('#msgErrclub').classList.remove('hidden')
+        club.value="";
+      }
+  })
+  flag.addEventListener('blur',()=>{
+    if(EstVide(flag.value)||verifierImageUrl(flag.value)==false)
+      {
+       document.querySelector('#msgErrflag').classList.remove('hidden')
+        flag.value="";
+      }
+  })
+  clubLogo.addEventListener('blur',()=>{
+    if(EstVide(clubLogo.value)||verifierImageUrl(clubLogo.value)==false)
+      {
+        document.querySelector('#msgErrclubimag').classList.remove('hidden')
+        clubLogo.value="";
+      }
+     
+      
+  })
+
+  function verifierImageUrl(inputValue) {
+    const regex = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|svg))/i; // Vérifie les extensions d'image
+    if (regex.test(inputValue)) {
+      console.log('Input valide : URL d\'image détectée.');
+      return true;
+    } else {
+      console.log('Input invalide : ce n\'est pas une URL d\'image.');
+      return false;
+    }
+  }
+  
+
+function verifierInput(inputValue) {
+  const regex = /^[a-zA-Z\s]+$/; // Permet uniquement les lettres et les espaces
+  if (regex.test(inputValue)) {
+    console.log('Input valide : ne contient que des lettres et des espaces.');
+    return true;
+  } else {
+    console.log('Input invalide : contient des chiffres ou des caractères spéciaux.');
+    return false;
+  }
+}
+
+
+function stylerCratePourAjout()
+{
   if(positionPlayer.value=="GK")
     {
-      ValidationNumerique(document.querySelector('#Diving').value,document.querySelector('#handling').value,document.querySelector('#kicking').value,document.querySelector('#reflexes').value,document.querySelector('#speed').value,document.querySelector('#positioning').value)
-      Exist(namePlayer.value)
+      
       let ratingGk=(parseInt(document.querySelector('#Diving').value)+parseInt(document.querySelector('#handling').value)+parseInt(document.querySelector('#kicking').value)+parseInt(document.querySelector('#reflexes').value)+parseInt(document.querySelector('#speed').value)+parseInt(document.querySelector('#positioning').value))/6
       createObjetPayerGK(ratingGk,document.querySelector('#Diving').value,document.querySelector('#handling').value,document.querySelector('#kicking').value,document.querySelector('#reflexes').value,document.querySelector('#speed').value,document.querySelector('#positioning').value)
       containerChangement.innerHTML+=`
-         <div class="flex justify-center">
-   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
+         <div class="flex justify-center" id="${namePlayer}">
+   <div class="cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col ">
            <div class="flex">
                <div class=" top-[310px] flex flex-col mt-4">
@@ -906,13 +989,14 @@ function  addPlayer()
 </div>
 
      `
+     
     }else{
-      Exist(namePlayer.value)
+      
       let ratingNonGk=(parseInt(document.querySelector('#pace').value)+parseInt(document.querySelector('#shooting').value)+parseInt(document.querySelector('#passing').value)+parseInt(document.querySelector('#dribbling').value)+parseInt(document.querySelector('#defending').value)+parseInt(document.querySelector('#physical').value))/6
       createObjetPayer(ratingNonGk,document.querySelector('#pace').value,document.querySelector('#shooting').value,document.querySelector('#passing').value,document.querySelector('#dribbling').value,document.querySelector('#defending').value,document.querySelector('#physical').value)
       containerChangement.innerHTML+=`
-        <div class="flex justify-center">
-   <div class="cardeAjoutTerrain cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
+        <div class="flex justify-center" id="${namePlayer}">
+   <div class="cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col">
            <div class="flex">
                <div class="top-[310px] flex flex-col mt-4">
@@ -958,13 +1042,10 @@ function  addPlayer()
 </div>
      `
     }
-
-   modaleAdd.classList.add('hidden')
-   event.preventDefault();
 }
 function Exist(name)
 {
-      if(players.findIndex(player=>player.name.toLowerCase()==name.toLowerCase())==-1||(arrayListePrincipale.findIndex(player=>player.name.toLowerCase()==name.toLowerCase()))==-1)
+      if(players.findIndex(player=>player.name.toLowerCase()==name.toLowerCase())!=-1||(arrayListePrincipale.findIndex(player=>player.name.toLowerCase()==name.toLowerCase()))!=-1)
         return true
       return false
 }
@@ -1012,20 +1093,8 @@ function createObjetPayer(rating,diving,handling,kicking,kicking,reflexes,speed,
  players.push(newPlayer)
 }
 
-function TousChampsRemplais(){
-  console.log('gffhwgs')
-};
-function ValidationNumerique(num1,num2,num3,num4,num5,num6){
-  if(isNumber(num1)&&isNumber(num2)&&isNumber(num3)&&isNumber(num4)&&isNumber(num5)&&isNumber(num6)){
-    console.log('est number')
-  }else{
-    console.log('n est pas number')
-  }
-}
-function isNumber(input) {
-  const regex = /^\d+$/;
-  return regex.test(input);
-}
+
+
 function EstVide(inputeValue)
 {
   if(inputeValue.trim() == '' )
@@ -1035,11 +1104,13 @@ function EstVide(inputeValue)
    }
    else{
     console.log(' ne contient pas des espace au debut ou fin')
+    return false
    }
 }
 
 Array.from(containerChangement.children).forEach(playerChngement => {
   playerChngement.addEventListener('click', () => {
+    console.log(playerChngement.id)
     modalePourSupprission(playerChngement)
     document.querySelector('#modaleremove').classList.remove('hidden')
   });
@@ -1070,10 +1141,9 @@ function removeplayer(playerChngement) {
     
     playerChngement.remove();
 
-    console.log(`Player "${playerName}" removed.`);
-    console.log("Remaining players:", players);
+   
   } else {
-    console.error(`Player "${playerName}" not found in the list.`);
+    console.error(`Player "${playerName}" not found `);
   }
 }
 
