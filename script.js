@@ -610,7 +610,7 @@ function ajoutToTerrain(carde){
     
     carte.addEventListener('click',()=>{
       carde.classList.add('hidden')
-      
+       carte.classList.remove('cardeajout')
       arrayListePrincipale.push(players[FiltredPlayers.findIndex(player=>player.name==carte.id)])
       
        carde.parentElement.appendChild(carte)
@@ -618,9 +618,6 @@ function ajoutToTerrain(carde){
         formcarde.classList.add('hidden')
         removerPlayerFromChangement(carte)
          CreateIconChangement(carte)
-        // console.log('class '+carte.classList)
-        // carte.classList.remove('cardeajout')
-        // console.log('class '+carte.classList)
     })
   })
 }
@@ -633,8 +630,9 @@ function CreateIconChangement(carte){
  carte.parentElement.appendChild(IconChangement)
  IconChangement.addEventListener('click',()=>{
   console.log('hihisf')
-  styleCarde(bgCarde,FiltredPlayers)
+ 
   formcarde.classList.remove('hidden')
+  // Array.from(formcarde.children).for
  })
 
 //  console.log(IconChangement.src)
@@ -683,6 +681,7 @@ positionPlayer.addEventListener('change',()=>{
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">Diving</label>
                 <input id="Diving" type="number" placeholder="diving" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrDiving" class="hidden text-red-200">Invalide number</p>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">handling</label>
@@ -849,22 +848,52 @@ function showPlayer(player){
     }
   }
 
-function  addPlayer()
-{
-  event.preventDefault();
-  if (Exist(namePlayer.value)) {
-        alert('Ce joueur existe déjà !');
-      } else {
-      //  console.log(Array.from(containerChangement.children)[0].id)
-        console.log('***************************')
-        stylerCratePourAjout()
-        // console.log(Array.from(containerChangement.children)[length].id)
-      }
+
+
+
+
+
+
+Array.from(containerChangement.children).forEach(playerChngement => {
+  playerChngement.addEventListener('click', () => {
+    console.log(playerChngement.id)
+    modalePourSupprission(playerChngement)
+    document.querySelector('#modaleremove').classList.remove('hidden')
+  });
+});
+
+document.querySelector('#bteNonModalSupprission').addEventListener('click',()=>{
+  console.log('clik')
+   document.querySelector('#modaleremove').classList.add('hidden')
+})
+function modalePourSupprission(playerChngement){
+document.querySelector('#bteOuiModalSupprission').addEventListener('click',()=>{
+  removeplayer(playerChngement)
+   document.querySelector('#modaleremove').classList.add('hidden')
+  //  alert('voutre suuprission ce fait avec sussés')
+})
+}
+function removeplayer(playerChngement) {
+ 
+  const playerName = playerChngement.id;
+  console.log(playerName)
   
-   modaleAdd.classList.add('hidden')
+  const playerIndex = players.findIndex(player => player.name == playerName);
+    console.log(playerIndex)
+  if (playerIndex !== -1) {
+   
+    players.splice(playerIndex, 1);
+
+    
+    playerChngement.remove();
 
    
+  } else {
+    console.error(`Player "${playerName}" not found `);
+  }
 }
+
+
 namePlayer.addEventListener('blur',()=>{
   if(EstVide(namePlayer.value)||verifierInput(namePlayer.value)==false)
   {
@@ -910,9 +939,15 @@ imagPlayer.addEventListener('blur',()=>{
      
       
   })
+  document.querySelector('#Diving').addEventListener('blur',()=>{
+    // console.log('hii')
+    if(verifierInputNumber(document.querySelector('#Diving').value)==false){
+     document.querySelector('#msgErrDiving').classList.remove('hidden')
+    }
+  })
 
   function verifierImageUrl(inputValue) {
-    const regex = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|svg))/i; // Vérifie les extensions d'image
+    const regex = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp|svg))/i; 
     if (regex.test(inputValue)) {
       console.log('Input valide : URL d\'image détectée.');
       return true;
@@ -924,7 +959,7 @@ imagPlayer.addEventListener('blur',()=>{
   
 
 function verifierInput(inputValue) {
-  const regex = /^[a-zA-Z\s]+$/; // Permet uniquement les lettres et les espaces
+  const regex = /^[a-zA-Z\s]+$/; 
   if (regex.test(inputValue)) {
     console.log('Input valide : ne contient que des lettres et des espaces.');
     return true;
@@ -934,6 +969,37 @@ function verifierInput(inputValue) {
   }
 }
 
+function verifierInputNumber(inputValue) {
+  // Convertir la valeur en nombre
+  const value = parseFloat(inputValue);
+
+  // Vérifier si c'est un nombre et s'il est dans la plage
+  if (!isNaN(value) && value >= 0 && value <= 100) {
+    console.log("La valeur est valide (entre 0 et 100).");
+    return true;
+  } else {
+    console.log("Valeur invalide : Doit être entre 0 et 100.");
+    return false;
+  }
+}
+
+
+function  addPlayer()
+{
+  event.preventDefault();
+  if (Exist(namePlayer.value)) {
+        alert('Ce joueur existe déjà !');
+      } else {
+      //  console.log(Array.from(containerChangement.children)[0].id)
+        console.log('***************************')
+        stylerCratePourAjout()
+        // console.log(Array.from(containerChangement.children)[length].id)
+      }
+  
+   modaleAdd.classList.add('hidden')
+
+   
+}
 
 function stylerCratePourAjout()
 {
@@ -1043,9 +1109,22 @@ function stylerCratePourAjout()
      `
     }
 }
+function EstVide(inputeValue)
+{
+  if(inputeValue.trim() == '' )
+   {
+    console.log(' conteit des espaces')
+    return true
+   }
+   else{
+    console.log(' ne contient pas des espace au debut ou fin')
+    return false
+   }
+}
 function Exist(name)
 {
-      if(players.findIndex(player=>player.name.toLowerCase()==name.toLowerCase())!=-1||(arrayListePrincipale.findIndex(player=>player.name.toLowerCase()==name.toLowerCase()))!=-1)
+  // ||(arrayListePrincipale.findIndex(player=>player.name.toLowerCase()==name.toLowerCase()))!=-1
+      if(players.findIndex(player=>player.name.toLowerCase()==name.toLowerCase())!=-1)
         return true
       return false
 }
@@ -1092,58 +1171,3 @@ function createObjetPayer(rating,diving,handling,kicking,kicking,reflexes,speed,
  }
  players.push(newPlayer)
 }
-
-
-
-function EstVide(inputeValue)
-{
-  if(inputeValue.trim() == '' )
-   {
-    console.log(' conteit des espaces')
-    return true
-   }
-   else{
-    console.log(' ne contient pas des espace au debut ou fin')
-    return false
-   }
-}
-
-Array.from(containerChangement.children).forEach(playerChngement => {
-  playerChngement.addEventListener('click', () => {
-    console.log(playerChngement.id)
-    modalePourSupprission(playerChngement)
-    document.querySelector('#modaleremove').classList.remove('hidden')
-  });
-});
-
-document.querySelector('#bteNonModalSupprission').addEventListener('click',()=>{
-  console.log('clik')
-   document.querySelector('#modaleremove').classList.add('hidden')
-})
-function modalePourSupprission(playerChngement){
-document.querySelector('#bteOuiModalSupprission').addEventListener('click',()=>{
-  removeplayer(playerChngement)
-   document.querySelector('#modaleremove').classList.add('hidden')
-  //  alert('voutre suuprission ce fait avec sussés')
-})
-}
-function removeplayer(playerChngement) {
- 
-  const playerName = playerChngement.id;
-  console.log(playerName)
-  
-  const playerIndex = players.findIndex(player => player.name == playerName);
-    console.log(playerIndex)
-  if (playerIndex !== -1) {
-   
-    players.splice(playerIndex, 1);
-
-    
-    playerChngement.remove();
-
-   
-  } else {
-    console.error(`Player "${playerName}" not found `);
-  }
-}
-
