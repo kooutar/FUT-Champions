@@ -13,12 +13,36 @@
     
 </body>
 <script>
-    imgSRC=document.createElement('img')
-    imgSetAttribute=document.createElement('img')
-    imgSetAttribute.setAttribute("src", "images/messi.png")
-    imgSRC.src='images/messi.png'
-    console.log("SRC "+imgSRC.src)
-    console.log("setAttribut "+imgSetAttribute.getAttribute("src"));
+   let obj=[
+    {
+      name:"kaoutar",
+      age:22,
+      type:"etudiant",
+   },
+   {
+      name:"kaoutar",
+      age:30,
+      type:"cme",
+   },
+   {
+      name:"kaoutar",
+      age:35,
+      type:"formateur",
+   }
+]
+
+// let tabFiltred=obj.filter(obj=>obj.age>=30)
+obj.forEach(personne=>{
+    if(personne.type=="etudiant")
+{
+    personne.name="salma"
+}
+})
+// affichage
+obj.forEach(personne=>{
+    console.log(personne)
+})
+
 
 </script>
 </html>

@@ -686,63 +686,134 @@ positionPlayer.addEventListener('change',()=>{
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">handling</label>
                 <input id="handling" type="number" placeholder="handling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrhandling" class="hidden text-red-200">Invalide number</p>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">kicking</label>
                 <input id="kicking" type="number" placeholder="kicking" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrhkicking" class="hidden text-red-200">Invalide number</p>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">reflexes</label>
                 <input id="reflexes" type="number" placeholder="reflexes" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrhreflexes" class="hidden text-red-200">Invalide number</p>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">speed</label>
                 <input id="speed" type="number" placeholder="speed" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrhspeed" class="hidden text-red-200">Invalide number</p>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">positioning</label>
                 <input id="positioning" type="number" placeholder="positioning" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrhpositioning" class="hidden text-red-200">Invalide number</p>
             </div>
        </div>
         `
+        document.querySelector('#Diving').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#Diving').value)==false){
+           document.querySelector('#msgErrDiving').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#handling').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#handling').value)==false){
+           document.querySelector('#msgErrhandling').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#kicking').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#kicking').value)==false){
+           document.querySelector('#msgErrhkicking').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#reflexes').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#reflexes').value)==false){
+           document.querySelector('#msgErrhreflexes').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#speed').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#speed').value)==false){
+           document.querySelector('#msgErrhspeed').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#positioning').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#positioning').value)==false){
+           document.querySelector('#msgErrhpositioning').classList.remove('hidden')
+          }
+        })
     }else{
         statistique.innerHTML=
         `
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">pace</label>
-                <input id="pace"type="number" placeholder="pace" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <input id="pace" type="number" placeholder="pace" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                 <p id="msgErrpace" class="hidden text-red-200">Invalide number</p>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">shooting</label>
                 <input id="shooting" type="number" placeholder="shooting" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                 <p id="msgErrshooting" class="hidden text-red-200">Invalide number</p>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for="" class="text-white">passing</label>
                 <input id="passing" type="number" placeholder="passing" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrpassing" class="hidden text-red-200">Invalide number</p>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">dribbling</label>
                 <input id="dribbling" type="number" placeholder="dribbling" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrdribbling" class="hidden text-red-200">Invalide number</p>
             </div>
        </div>
         <div class="flex gap-2">
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">defending</label>
                 <input id="defending" type="number" placeholder="defending" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                 <p id="msgErrdefending" class="hidden text-red-200">Invalide number</p>
             </div>
             <div class="flex flex-col gap-1 w-1/2">
                 <label for=""class="text-white">physical</label>
                 <input id="physical" type="number" placeholder="physical" class="rounded-lg p-2 border-2  focus:outline-none focus:border-blue-500 hover:border-blue-300" required>
+                <p id="msgErrphysical" class="hidden text-red-200">Invalide number</p>
             </div>
        </div>
         `  
+        document.querySelector('#pace').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#pace').value)==false){
+           document.querySelector('#msgErrpace').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#shooting').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#shooting').value)==false){
+           document.querySelector('#msgErrshooting').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#passing').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#passing').value)==false){
+           document.querySelector('#msgErrpassing').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#dribbling').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#dribbling').value)==false){
+           document.querySelector('#msgErrdribbling').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#defending').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#defending').value)==false){
+           document.querySelector('#msgErrdefending').classList.remove('hidden')
+          }
+        })
+        document.querySelector('#physical').addEventListener('blur',()=>{
+          if(verifierInputNumber(document.querySelector('#physical').value)==false){
+           document.querySelector('#msgErrphysical').classList.remove('hidden')
+          }
+        })
     }
 })
 // fct add player
@@ -848,12 +919,6 @@ function showPlayer(player){
     }
   }
 
-
-
-
-
-
-
 Array.from(containerChangement.children).forEach(playerChngement => {
   playerChngement.addEventListener('click', () => {
     console.log(playerChngement.id)
@@ -940,7 +1005,7 @@ imagPlayer.addEventListener('blur',()=>{
       
   })
   document.querySelector('#Diving').addEventListener('blur',()=>{
-    // console.log('hii')
+    console.log('hii')
     if(verifierInputNumber(document.querySelector('#Diving').value)==false){
      document.querySelector('#msgErrDiving').classList.remove('hidden')
     }
@@ -970,6 +1035,7 @@ function verifierInput(inputValue) {
 }
 
 function verifierInputNumber(inputValue) {
+  console.log('je suis a verifierInputNumber')
   // Convertir la valeur en nombre
   const value = parseFloat(inputValue);
 
