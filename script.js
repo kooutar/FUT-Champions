@@ -470,6 +470,7 @@ function handleCardClick(carde, position) {
   });
 
   formcarde.classList.remove('hidden'); // Affiche le formulaire
+
 }
 
 // Attache les gestionnaires d'événements aux cartes
@@ -617,11 +618,12 @@ function ajoutToTerrain(carde){
       //  carte.classList.add('carde')
         formcarde.classList.add('hidden')
         removerPlayerFromChangement(carte)
-         CreateIconChangement(carte)
+         CreateIconChangement(carte,carde)
+         
     })
   })
 }
-function CreateIconChangement(carte){
+function CreateIconChangement(carte,carde){
   console.log('je suis a CreateIconChangement')
  let IconChangement=document.createElement('img')
  IconChangement.src="images/png-clipart-computer-icons-raypa-r-espinar-s-l-icon-design-replacement-miscellaneous-blue-removebg-preview.png"
@@ -629,28 +631,27 @@ function CreateIconChangement(carte){
  carte.parentElement.classList.add("flex")
  carte.parentElement.appendChild(IconChangement)
  IconChangement.addEventListener('click',()=>{
-  console.log('hihisf')
+  console.log('autre joueur')
  
   formcarde.classList.remove('hidden')
-  // Array.from(formcarde.children).for
+  document.querySelector('#formwhite').classList.remove('hidden')
+  Array.from(formcarde.children).forEach(child=>{
+    child.addEventListener('click',()=>{
+      console.log('hi')
+      carte.classList.add('hidden')
+      IconChangement.classList.add('hidden')
+      carde.parentElement.appendChild(child)
+      console.log('dfksjgklngjsgn')
+      formcarde.classList.add('hidden')
+      document.querySelector('#formwhite').classList.add('hidden')
+      console.log('formcarde')
+    })
+  })
+  
  })
 
-//  console.log(IconChangement.src)
-//  carte.parentElement.classList.add("flex")
-// Array.from(carte.parentElement.children).forEach(icon=>{
-//   if(icon.src==IconChangement.src){
-//     console.log('exist')
-//     return
-//   }
-    
-//   else{
-//     console.log('not exist')
-//     carte.parentElement.appendChild(IconChangement)
-//     IconChangement.addEventListener('click',()=>{
-//      formcarde.classList.remove('hidden')
-//     })
-//   }
-// })
+
+
 
  
 }
