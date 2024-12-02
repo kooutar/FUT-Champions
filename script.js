@@ -456,27 +456,10 @@ closeBte.forEach((closeBte)=>{
     })
 });
 // 
-// Fonction principale pour gérer les clics et filtrer les joueurs
-function handleCardClick(carde, position) {
-  bgCarde.innerHTML = ``; // Réinitialise le contenu
-  console.log(carde.id); // Affiche l'ID de la carte cliquée
-
-  const filteredPlayers = players.filter(player => player.position === position); // Filtre les joueurs par position
-
-  // Ajoute les cartes pour chaque joueur filtré
-  filteredPlayers.forEach(player => {
-    styleCarde(bgCarde, player);
-    ajoutToTerrain(carde);
-  });
-
-  formcarde.classList.remove('hidden'); // Affiche le formulaire
-
-}
-
-// Attache les gestionnaires d'événements aux cartes
+// 
 carde.forEach(carde => {
   carde.addEventListener('click', () => {
-    const positionMap = {
+    const positionObjet= {
       LST: "ST",
       GK: "GK",
       RST: "ST",
@@ -489,13 +472,30 @@ carde.forEach(carde => {
       LCB: "CB",
       LB: "LB"
     };
-
-    // Si l'ID de la carte correspond à une position connue, applique la logique
-    if (positionMap[carde.id]) {
-      handleCardClick(carde, positionMap[carde.id]);
+    if (positionObjet[carde.id]) {
+      recuperePlayersPosition(carde, positionObjet[carde.id]);
     }
   });
 });
+// 
+function recuperePlayersPosition(carde, position) {
+  bgCarde.innerHTML = ``; 
+  console.log(carde.id); 
+
+  const filteredPlayers = players.filter(player => player.position === position); 
+
+  
+  filteredPlayers.forEach(player => {
+    styleCarde(bgCarde, player);
+    ajoutToTerrain(carde);
+  });
+
+  formcarde.classList.remove('hidden'); 
+
+}
+
+
+
   // fct style carde
   function styleCarde(parentDiv, player)
   {
@@ -634,16 +634,15 @@ function CreateIconChangement(carte,carde){
   console.log('autre joueur')
  
   formcarde.classList.remove('hidden')
-  document.querySelector('#formwhite').classList.remove('hidden')
-  Array.from(formcarde.children).forEach(child=>{
+
+  Array.from(bgCarde.children).forEach(child=>{
     child.addEventListener('click',()=>{
-      console.log('hi')
+      console.log('click child')
       carte.classList.add('hidden')
       IconChangement.classList.add('hidden')
       carde.parentElement.appendChild(child)
-      console.log('dfksjgklngjsgn')
       formcarde.classList.add('hidden')
-      document.querySelector('#formwhite').classList.add('hidden')
+  
       console.log('formcarde')
     })
   })
@@ -994,12 +993,16 @@ function  addPlayer()
       //  console.log(Array.from(containerChangement.children)[0].id)
         console.log('***************************')
         stylerCratePourAjout()
-        // console.log(Array.from(containerChangement.children)[length].id)
+      // console.log(Array.from(containerChangement.children)[length].id)
       }
-  
-   modaleAdd.classList.add('hidden')
-
-   
+   modaleAdd.classList.add('hidden') 
+   Array.from(containerChangement.children).forEach(playerChngement => {
+    playerChngement.addEventListener('click', () => {
+      console.log(playerChngement)
+      modalePourSupprission(playerChngement)
+      document.querySelector('#modaleremove').classList.remove('hidden')
+    });
+  });
 }
 
 function stylerCratePourAjout()
@@ -1010,7 +1013,7 @@ function stylerCratePourAjout()
       let ratingGk=(parseInt(document.querySelector('#Diving').value)+parseInt(document.querySelector('#handling').value)+parseInt(document.querySelector('#kicking').value)+parseInt(document.querySelector('#reflexes').value)+parseInt(document.querySelector('#speed').value)+parseInt(document.querySelector('#positioning').value))/6
       createObjetPayerGK(ratingGk,document.querySelector('#Diving').value,document.querySelector('#handling').value,document.querySelector('#kicking').value,document.querySelector('#reflexes').value,document.querySelector('#speed').value,document.querySelector('#positioning').value)
       containerChangement.innerHTML+=`
-         <div class="flex justify-center" id="${namePlayer}">
+         <div class="flex justify-center" id="${namePlayer.value}">
    <div class="cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4  " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col ">
            <div class="flex">
@@ -1062,7 +1065,7 @@ function stylerCratePourAjout()
       let ratingNonGk=(parseInt(document.querySelector('#pace').value)+parseInt(document.querySelector('#shooting').value)+parseInt(document.querySelector('#passing').value)+parseInt(document.querySelector('#dribbling').value)+parseInt(document.querySelector('#defending').value)+parseInt(document.querySelector('#physical').value))/6
       createObjetPayer(ratingNonGk,document.querySelector('#pace').value,document.querySelector('#shooting').value,document.querySelector('#passing').value,document.querySelector('#dribbling').value,document.querySelector('#defending').value,document.querySelector('#physical').value)
       containerChangement.innerHTML+=`
-        <div class="flex justify-center" id="${namePlayer}">
+        <div class="flex justify-center" id="${namePlayer.value}">
    <div class="cursor-pointer flex flex-col bg-cover bg-center bg-no-repeat w-[150px] h-[220px] items-center pt-4 " style="background-image: url('images/gold84.png');">
        <div class="flex flex-col">
            <div class="flex">
