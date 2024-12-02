@@ -3,18 +3,18 @@
 ## Fut Champions
 
 ### Fonctionnalités
-- Inscription au mode
-- Gestion des matchs
-- Récompenses hebdomadaires
-- Classement global
+- Ajouter  nouveau joueur
+- ajouter un joueur au terrain
+- supprimmer joueur
+- echanger joueur
 
-#### Inscription
-1. Connectez-vous à votre compte.
-2. Cliquez sur "Participer à Fut Champions".
+#### Ajouter  nouveau joueur
+1. validation des indormation saisé a travers regex
+2. vérifier que le joureur n'exist pas 
 
-#### Jouer des matchs
-- Lancez des matchs contre d'autres participants.
-- Mettez à jour vos résultats.
+#### ajouter un joueur au terrain
+- ajouter un joueur au terrain d'aprait ca position
+- le joueur prancipale va retérer de échange 
 
-### Récompenses
-Les récompenses sont distribuées à la fin de chaque semaine en fonction de votre rang.
+### echanger joueur
+echanger joueur avec autre a meme position
